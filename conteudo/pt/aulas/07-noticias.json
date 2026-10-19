@@ -1,0 +1,124 @@
+{
+  "slug": "noticias",
+  "num": 7,
+  "menu": "Notícias",
+  "titulo": "Notícias com página própria e arquivo permanente",
+  "titulo_curto": "Notícias com página própria",
+  "minutos": 15,
+  "lead": "Notícia que só existe como item numa lista da home some quando a lista anda, e com ela some a URL que o buscador já tinha indexado. Cada notícia merece endereço próprio, marcação de notícia apontando para a sua marca, um corpo escrito só com fatos da fonte e um arquivo que nunca é podado.",
+  "objetivo": "publicar notícia em URL própria com NewsArticle, corpo só com fatos da fonte e um arquivo que nunca apaga páginas já indexadas.",
+  "competencias": ["publicar-noticia-em-url-propria", "marcar-newsarticle", "escrever-corpo-com-fatos-da-fonte", "manter-arquivo-permanente"],
+  "aprende": [
+    {"t": "Por que lista na home não é página"},
+    {"t": "O modelo de NewsArticle ligado à sua entidade"},
+    {"t": "Corpo de 150 a 250 palavras só com fatos da fonte"},
+    {"t": "Arquivo permanente e noindex quando a fonte pede login"}
+  ],
+  "hero_alt": "Pessoa retira com cuidado um volume encadernado de jornais de uma prateleira de arquivo.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Da notícia ao arquivo",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "megafone", "titulo": "Notícia", "sub": "novidade com data",
+         "detalhe": "Lançamento, mudança, \"o que mudou\". Mora no site de notícias pelo território da aula 2, nunca como guia \"o que é\"."},
+        {"icone": "arquivo", "titulo": "URL própria", "sub": "uma por notícia e idioma", "forte": true,
+         "detalhe": "Cada notícia tem endereço fixo, um por idioma. Liga para a fonte, para a página evergreen do tema e para o item do catálogo."},
+        {"icone": "marca", "titulo": "NewsArticle", "sub": "publisher → sua marca",
+         "detalhe": "A marcação de notícia aponta para a Organization da aula 1 pelo @id e diz em que fonte se baseia (isBasedOn)."},
+        {"icone": "texto", "titulo": "Corpo", "sub": "150 a 250 palavras",
+         "detalhe": "Título e uma frase é página rasa. Um agente escreve três parágrafos só com fatos da página fonte, com os números conferidos. Fonte com login ou pouco texto: a página fica com noindex até ter corpo."},
+        {"icone": "pasta", "titulo": "Arquivo", "sub": "nunca podado", "forte": true,
+         "detalhe": "A home mostra as mais recentes, mas as páginas vêm de um arquivo que nunca perde item. URL indexada não pode sumir. Dá para reconstruir o arquivo pelo histórico do git."}
+      ],
+      "legenda": "Lista é vitrine; o arquivo é o acervo."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Publicar uma notícia",
+      "sub": "Clique em cada passo.",
+      "passos": [
+        {"titulo": "Endereço", "sub": "fixo",
+         "texto": ["Gere o endereço a partir de um id estável, não da posição na lista. Mesmo id em PT, EN e ES, com hreflang recíproco."]},
+        {"titulo": "Corpo", "sub": "fatos da fonte",
+         "texto": ["Dê ao agente o texto da página fonte e o modelo de pedido. Três parágrafos: o que é, o que muda para quem usa, como começar.", "Confira o resultado: 110 a 320 palavras e todo número presente na fonte (a trava da aula 5 serve)."]},
+        {"titulo": "Marcação", "sub": "NewsArticle",
+         "texto": ["Preencha título, descrição, datas reais, idioma, a fonte em isBasedOn e o publisher com o @id da sua organização."]},
+        {"titulo": "Arquivo", "sub": "e aviso",
+         "texto": ["Acrescente a notícia ao arquivo (nunca remova as antigas) e avise os buscadores só com URLs que respondem 200, como no curso 1."],
+         "exemplo": {"rot": "No INEMA", "texto": "No site de notícias, 113 de 159 notícias têm corpo de texto; as outras ficaram assim porque a fonte exige login, tem pouco texto ou deu 404. Em 02/10/2026 foram avisadas 342 URLs do news."}}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Os modelos de marcação e de corpo",
+      "sub": "Do inemaSEO (MIT). Troque domínio, id e datas.",
+      "blocos": [
+        {"rot": "jsonld-newsarticle.json", "icone": "arquivo",
+         "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"Título da notícia\",\n  \"description\": \"Resumo de uma frase.\",\n  \"articleBody\": \"Corpo com 150 a 250 palavras, escrito só com fatos da fonte.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"pt-BR\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"},
+        {"rot": "prompt-texto-noticia.md (corpo contra página rasa)", "icone": "chat",
+         "conteudo": "Você escreve o corpo de uma notícia para leitores leigos.\nNotícia: \"<título>\" — <resumo>\nEscreva 3 parágrafos curtos (150 a 250 palavras no total):\n1) o que é; 2) para que serve / o que muda para quem usa; 3) como começar ou o que observar.\nREGRAS: use SÓ fatos do TEXTO DA FONTE; não invente números, datas, preços, nomes ou promessas; frases\nsimples, sem clickbait, sem \"neste artigo\". Depois traduza para inglês (en) e espanhol (es), mantendo\nnomes de produtos e marcas.\nResponda SOMENTE JSON: {\"pt\":[\"p1\",\"p2\",\"p3\"],\"en\":[\"p1\",\"p2\",\"p3\"],\"es\":[\"p1\",\"p2\",\"p3\"]}\n\nTEXTO DA FONTE:\n<texto extraído da página original>"},
+        {"rot": "Regra do arquivo (anotação)", "icone": "lista",
+         "conteudo": "Arquivo de notícias de <site>\n- toda notícia publicada entra em <arquivo.json>; nada é removido\n- a home mostra as <N> mais recentes do arquivo\n- fonte com login ou pouco texto: página com noindex até ter corpo\n- validação do corpo: 110 a 320 palavras; todo número existe na fonte; 3 parágrafos por idioma"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Por que o corpo importa", "html": "<p>Título com uma frase é página rasa, e página rasa indexada pesa contra o site inteiro (curso 1, aula 7). O corpo de 150 a 250 palavras não é enchimento: é o resumo útil, só com fatos que a fonte confirma.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>Podar a lista</b> e apagar a página junto: URL indexada vira 404.</li><li><b>\"O que é X\" no site de notícias</b>: disputa com o pilar.</li><li><b>Número que a fonte não tem</b> no corpo: reprova na trava.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: uma notícia no modelo",
+      "sub": "Escolha uma novidade real do seu assunto.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Notícia com NewsArticle", "min": "40 min",
+         "texto": "Escreva o corpo com o modelo de pedido a partir da fonte, preencha o NewsArticle com o @id da sua organização e publique em URL própria.",
+         "pronto": "a página responde 200, o validador de schema.org mostra o NewsArticle sem erro com o publisher apontando para o seu @id, e o corpo tem de 150 a 250 palavras."},
+        {"id": "e2", "titulo": "E2 · Regra do arquivo", "min": "15 min",
+         "texto": "Escreva a regra do arquivo do seu site e confira se a home poda páginas antigas.",
+         "pronto": "a anotação diz onde fica o arquivo, quantas a home mostra e o que acontece com notícia sem fonte acessível (noindex)."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "A home mostra as 20 notícias mais recentes e apaga as anteriores. Qual o problema?",
+         "opcoes": ["Nenhum.", "URLs que já estavam indexadas somem; o arquivo tem de ser permanente.", "Falta FAQ.", "O título fica grande."],
+         "certa": 1, "explica": "A home pode mostrar poucas, mas as páginas vêm de um arquivo que nunca é podado.", "ref": "diagrama", "cert": true},
+        {"p": "A fonte da notícia exige login e você não tem o texto. O que fazer?",
+         "opcoes": ["Pedir ao agente para imaginar o conteúdo.", "Publicar só o título com indexação normal.", "Deixar a página com noindex até ter corpo.", "Copiar o texto de outro site."],
+         "certa": 2, "explica": "Sem fonte acessível não há fato para escrever. A página fica fora do índice até ter corpo.", "ref": "diagrama"},
+        {"p": "Para onde aponta o publisher do NewsArticle?",
+         "opcoes": ["Para a fonte original.", "Para o @id da sua Organization (aula 1).", "Para o autor da fonte.", "Para a home."],
+         "certa": 1, "explica": "A fonte vai em isBasedOn. O publisher é a sua organização, pelo mesmo @id de todas as páginas.", "ref": "codigo"},
+        {"p": "O corpo gerado tem um número que não está na fonte. E agora?",
+         "opcoes": ["Publicar: é só um número.", "Reprovar e refazer: todo número tem de existir na fonte.", "Arredondar.", "Pôr entre aspas."],
+         "certa": 1, "explica": "A validação do corpo exige que todo número apareça na fonte, como na trava das fichas.", "ref": "passos"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "URL própria", "texto": "Uma por notícia e por idioma."},
+        {"t": "NewsArticle", "texto": "Publisher pelo @id da sua marca; fonte em isBasedOn."},
+        {"t": "Arquivo", "texto": "A home mostra poucas; o arquivo guarda todas."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google: dados estruturados de artigo (inglês)", "href": "https://developers.google.com/search/docs/appearance/structured-data/article", "icone": "lupa"},
+        {"t": "jsonld-newsarticle.json (inemaSEO, MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/jsonld-newsarticle.json", "icone": "arquivo"},
+        {"t": "prompt-texto-noticia.md (inemaSEO, MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/prompt-texto-noticia.md", "icone": "chat"}
+      ]
+    }
+  ]
+}

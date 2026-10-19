@@ -1,0 +1,126 @@
+{
+  "slug": "palavra-chave",
+  "num": 3,
+  "menu": "Pauta",
+  "titulo": "Validar palavra-chave sem ferramenta paga",
+  "titulo_curto": "Validar palavra-chave",
+  "minutos": 18,
+  "lead": "Escrever sobre o que ninguém busca é trabalho perdido; escrever sobre o que todo portal grande já domina também. Antes de abrir o editor, dê uma nota a cada palavra-chave com sinais gratuitos: autocomplete, Google Trends, Search Console e o próprio resultado da busca. E só siga em frente se você tem algo real para contar.",
+  "objetivo": "pontuar 10 palavras-chave com o score GO/NO-GO e agrupar as aprovadas por intenção, cada grupo com uma página dona.",
+  "competencias": ["pontuar-palavra-chave", "ler-resultado-da-busca", "agrupar-por-intencao"],
+  "aprende": [
+    {"t": "As fontes grátis e o que cada uma diz"},
+    {"t": "O score GO / TALVEZ / NO-GO, critério por critério"},
+    {"t": "Agrupar palavras por intenção numa planilha"},
+    {"t": "O limite honesto do grátis e quando uma paga ajuda"}
+  ],
+  "hero_alt": "Pessoa na mesa da cozinha separa fichas de papel em duas pilhas, com o notebook ao lado.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Da lista crua à pauta aprovada",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "lista", "titulo": "Lista crua", "sub": "ideias e perguntas",
+         "detalhe": "Perguntas de clientes, dúvidas da sua comunidade, consultas que já aparecem no Search Console, sugestões de um assistente de IA. Quantidade aqui é bom: o filtro vem depois."},
+        {"icone": "lupa", "titulo": "Fontes grátis", "sub": "sinais de demanda",
+         "itens": [{"icone": "texto", "t": "autocomplete do Google"}, {"icone": "grafico", "t": "Google Trends"}, {"icone": "grafico", "t": "Search Console"}, {"icone": "lista", "t": "resultado da busca (top 10)"}],
+         "detalhe": "Cada fonte dá um sinal parcial. Sugestão no autocomplete = alguém busca. Impressão no Search Console = você já aparece. O top 10 mostra se dá para competir."},
+        {"icone": "alvo", "titulo": "Score", "sub": "soma de pontos", "forte": true,
+         "detalhe": "Cada critério soma ou tira pontos. O critério que mais pesa: você tem experimento, curso, projeto ou dado real para citar (+2; sem isso, −3)."},
+        {"icone": "portao", "titulo": "Decisão", "sub": "GO ≥ 6 · TALVEZ 3–5 · NO-GO ≤ 2",
+         "detalhe": "GO entra na pauta. TALVEZ entra só se sobrar vaga. NO-GO sai, mesmo que a palavra pareça boa."},
+        {"icone": "camadas", "titulo": "Clusters", "sub": "por intenção",
+         "detalhe": "As aprovadas se juntam por intenção. Cada grupo vira UMA página dona (aula 2), e as variações viram seções dela, não páginas novas."}
+      ],
+      "legenda": "Sem dado próprio, a nota cai três pontos: é assim que o score separa conteúdo seu de conteúdo commodity."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Pontuar uma palavra em cinco olhadas",
+      "sub": "Clique em cada passo.",
+      "passos": [
+        {"titulo": "Autocomplete", "sub": "+2",
+         "texto": ["Digite o começo da busca no Google, numa janela anônima. Se a frase aparece sugerida, alguém busca.", "Repita com letras depois do termo (\"como fazer pão a\", \"b\"...) para colher variações reais."]},
+        {"titulo": "Trends", "sub": "+2 ou +3",
+         "texto": ["No Google Trends, compare com um termo-âncora que você conhece. Interesse acima de zero em 12 meses: +2. Pelo menos 10% da âncora: +3.", "Zero em 12 meses é sinal de NO-GO, por mais que a ideia agrade."]},
+        {"titulo": "Search Console", "sub": "+3",
+         "texto": ["Se a consulta já tem impressão no seu Search Console, em qualquer posição, ela vale o maior ponto: é demanda confirmada para o seu site.", "Consulta com impressão e sem página dedicada é pauta validada de graça (o curso 3 aprofunda)."]},
+        {"titulo": "Resultado da busca", "sub": "+2 / −2",
+         "texto": ["Abra o top 10. Pelo menos 3 resultados fracos (fórum, vídeo sem texto, página antiga, outro idioma): +2.", "Top 10 dominado por grandes plataformas com página específica para a busca: −2. Intenção de aprender ou comprar: +1."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "A planilha do score e o pedido de agrupamento",
+      "sub": "Copie para a sua planilha. O agrupamento pode ser feito por um agente da sua assinatura, com revisão sua.",
+      "blocos": [
+        {"rot": "Score GO/NO-GO (método inemaSEO, etapa 6)", "icone": "lista",
+         "conteudo": "| Critério | Pontos |\n|---|---|\n| Aparece no autocomplete do Google | +2 |\n| Google Trends > 0 em 12 meses (≥ 10% de um termo-âncora: +3) | +2 |\n| Já tem impressão no Search Console | +3 |\n| Intenção de aprender ou comprar | +1 |\n| Top 10 com ≥ 3 resultados fracos (fórum, vídeo sem texto, antigo, outro idioma) | +2 |\n| Top 10 dominado por grandes plataformas com página específica | −2 |\n| Você tem experimento/curso/projeto real para citar | +2 (sem isso: −3) |\n\nGO ≥ 6 · TALVEZ 3–5 · NO-GO ≤ 2"},
+        {"rot": "Colunas da planilha", "icone": "grafico",
+         "conteudo": "termo | autocomplete | trends | gsc | intencao | top10_fraco | top10_grandes | dado_proprio (qual?) | score | decisao | cluster"},
+        {"rot": "Pedido de agrupamento por intenção (agente)", "icone": "chat",
+         "conteudo": "Abaixo estão palavras-chave aprovadas (GO). Agrupe-as por INTENÇÃO de busca:\no que a pessoa quer resolver, não a palavra exata.\nRegras:\n- cada grupo recebe um nome curto da intenção e a palavra principal;\n- as outras palavras do grupo viram seções da mesma página, nunca páginas novas;\n- não invente palavras nem números; use só a lista;\n- se uma palavra não combina com nenhum grupo, deixe-a sozinha.\nResponda em tabela: grupo | palavra principal | variações.\n\nLISTA:\n<cole aqui>"}
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {"rot": "Exemplo pontuado", "html": "<p>Exemplo fictício, de uma padaria de fermentação natural:</p><ul><li><b>\"como fazer levain\"</b>: autocomplete +2, Trends +3, sem impressão 0, aprender +1, top 10 com 3 fracos +2, receita testada na própria padaria +2 → <b>10, GO</b>.</li><li><b>\"melhor pão do Brasil\"</b>: autocomplete +2, Trends +2, sem impressão 0, sem intenção clara 0, grandes portais −2, nada próprio −3 → <b>−1, NO-GO</b>.</li></ul>"},
+          {"rot": "O limite do grátis", "html": "<p>Volume exato de busca não existe de graça. O Planejador de Palavras-chave do Google Ads, numa conta sem campanha, mostra só faixas (10–100, 100–1 mil).</p><p>Ferramentas pagas (DataForSEO, Semrush, Ahrefs) dão número e dificuldade. São opcionais: confira preço no site de cada uma. O score acima decide sem elas.</p>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: a sua pauta",
+      "sub": "Uma planilha com as colunas do modelo.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Dez termos pontuados", "min": "60 min",
+         "texto": "Monte uma lista de 10 termos do seu assunto e pontue cada um com as cinco olhadas. Na coluna \"dado próprio\", escreva qual experimento, produto ou caso real você citaria.",
+         "pronto": "a planilha tem 10 linhas com score e decisão, e toda linha GO tem o dado próprio descrito."},
+        {"id": "e2", "titulo": "E2 · Clusters", "min": "20 min",
+         "texto": "Agrupe os GO por intenção (à mão ou com o pedido ao agente) e confira o resultado. Cruze com o mapa de canônicos da aula 2.",
+         "pronto": "cada grupo tem uma palavra principal e uma página dona, e nenhum grupo gerou duas páginas."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Um termo soma 7 pontos, mas você não tem nenhum caso ou dado próprio para citar. Qual é a nota real?",
+         "opcoes": ["7: GO.", "Ele perde os +2 e ganha −3, e cai para TALVEZ ou NO-GO.", "9: dado próprio não importa.", "Não dá para saber sem ferramenta paga."],
+         "certa": 1, "explica": "O critério do dado próprio é o que separa conteúdo seu de commodity. Sem ele, a página seria igual às outras.", "ref": "codigo", "cert": true},
+        {"p": "Qual sinal vale mais pontos?",
+         "opcoes": ["Aparecer no autocomplete.", "Já ter impressão no seu Search Console.", "Top 10 fraco.", "Intenção de compra."],
+         "certa": 1, "explica": "Impressão no seu Search Console é demanda confirmada para o seu site: +3.", "ref": "passos"},
+        {"p": "Cinco palavras aprovadas têm a mesma intenção. Quantas páginas?",
+         "opcoes": ["Cinco, uma por palavra.", "Uma página dona; as variações viram seções.", "Duas, para testar.", "Nenhuma."],
+         "certa": 1, "explica": "Uma página por variação de palavra é o atalho que vira canibalização e conteúdo escalado.", "ref": "diagrama"},
+        {"p": "O que dá para saber de graça sobre volume de busca?",
+         "opcoes": ["O número exato por mês.", "Sinais e faixas: autocomplete, Trends relativo, faixas do Planejador e as suas impressões.", "Nada.", "Só a dificuldade."],
+         "certa": 1, "explica": "Volume exato é coisa de ferramenta paga. Os sinais grátis bastam para decidir GO ou NO-GO.", "ref": "codigo"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Cinco olhadas", "texto": "Autocomplete, Trends, Search Console, top 10 e o seu dado próprio."},
+        {"t": "GO ≥ 6", "texto": "TALVEZ só se sobrar vaga; NO-GO sai."},
+        {"t": "Grupo = página", "texto": "Variações viram seções da página dona."},
+        {"t": "Régua de 2026", "texto": "O guia do Google para IA diz que o conteúdo não-commodity é o que conta: o ponto do dado próprio é o critério que mais pesa."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google Trends", "href": "https://trends.google.com/", "icone": "grafico"},
+        {"t": "Google Search Console", "href": "https://search.google.com/search-console", "icone": "grafico"},
+        {"t": "Google: guia de otimização para recursos de IA (inglês)", "href": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide", "icone": "lupa"},
+        {"t": "Método inemaSEO, etapa 6 (MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"}
+      ]
+    }
+  ]
+}

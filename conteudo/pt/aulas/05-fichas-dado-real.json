@@ -1,0 +1,124 @@
+{
+  "slug": "fichas-dado-real",
+  "num": 5,
+  "menu": "Fichas",
+  "titulo": "Fichas com dado real e a trava anti-invenção",
+  "titulo_curto": "Fichas com dado real",
+  "minutos": 18,
+  "lead": "Catálogo de produtos, cursos ou serviços vira uma página por item: a ficha. Feita em lote, com texto de modelo, ela é a página rasa que não indexa. Feita a partir da página real de cada item, com uma IA que só extrai e uma trava que descarta o que ela inventou, ela vira conteúdo que só você tem.",
+  "objetivo": "gerar fichas de catálogo extraídas da página real de cada item e descartar o item que falha na trava anti-invenção.",
+  "competencias": ["extrair-ficha-da-fonte", "rodar-trava-anti-invencao", "decidir-publicar-ou-descartar"],
+  "aprende": [
+    {"t": "Por que 283 fichas de modelo não indexaram"},
+    {"t": "O prompt extrativo: copiar da fonte, não criar"},
+    {"t": "A trava: título, palavras e números conferidos na fonte"},
+    {"t": "Publicar aos poucos, e só o que passou"}
+  ],
+  "hero_alt": "Arquivista confere uma ficha de catálogo contra o documento original, diante de um gaveteiro de madeira.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Da página real à ficha publicada",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "arquivo", "titulo": "Página real", "sub": "a fonte do item",
+         "detalhe": "A página do próprio produto, curso ou serviço, com o texto que você já escreveu. Se a fonte não existe ou está atrás de login, a ficha não tem de onde tirar dado."},
+        {"icone": "robo", "titulo": "IA extrativa", "sub": "copia, não cria",
+         "detalhe": "O prompt manda copiar os títulos como aparecem e reusar as palavras da página. Sem preço, promoção, depoimento ou número de alunos. Campo que falta fica vazio."},
+        {"icone": "portao", "titulo": "Trava", "sub": "três conferências", "forte": true,
+         "itens": [{"icone": "check", "t": "o título existe na fonte"}, {"icone": "check", "t": "a frase reusa as palavras da fonte"}, {"icone": "check", "t": "todo número aparece na fonte"}],
+         "detalhe": "O validar_extracao.mjs confere cada item. O que falha é descartado, não consertado: melhor uma ficha menor do que uma ficha mentirosa."},
+        {"icone": "check", "titulo": "Publica", "sub": "em lotes pequenos", "forte": true,
+         "detalhe": "Ficha com 3 ou mais módulos válidos entra como enriquecida. Entra no sitemap só com conteúdo único daquele item."},
+        {"icone": "x", "titulo": "Descarta", "sub": "ou fica com noindex",
+         "detalhe": "Item reprovado não vira página indexável. Volta quando a fonte tiver texto suficiente."}
+      ],
+      "legenda": "A IA reescreve e organiza; a trava garante que ela não criou fatos."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "O caso e a correção",
+      "sub": "Clique em cada passo.",
+      "passos": [
+        {"titulo": "O lote", "sub": "30/08/2026",
+         "texto": ["O INEMA publicou 283 fichas de curso num commit só. Das 6 fichas da amostra, 5 estavam \"descobertas, não indexadas\" e nunca tinham sido rastreadas."]},
+        {"titulo": "O diagnóstico", "sub": "por que era raso",
+         "texto": ["Cada ficha tinha de 170 a 240 palavras, e duas fichas sorteadas compartilhavam 47% do vocabulário.", "O FAQ era idêntico em todas e a descrição era copiada da página do curso."]},
+        {"titulo": "A extração", "sub": "prompt + trava",
+         "texto": ["A ementa passou a ser extraída da página real de cada curso, com a trava descartando o que não estava na fonte.", "40 fichas foram extraídas e validadas por US$ 0,031, numa rodada com API autorizada; os lotes seguintes passaram para o Codex pela assinatura."]},
+        {"titulo": "O ritmo", "sub": "aos poucos",
+         "texto": ["As fichas enriquecidas foram de 40 para 50, 76 e 98 (05/10/2026), entre 310 fichas no ar. Em lotes, não de uma vez."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "O prompt extrativo e a trava",
+      "sub": "Troque \"curso\" pelo seu tipo de item. Rode a trava em cada frase e título.",
+      "blocos": [
+        {"rot": "prompt-ficha-extrativa.md (templates do inemaSEO)", "icone": "chat",
+         "conteudo": "Você extrai a ementa de um curso a partir do TEXTO DA PÁGINA dele. Regras:\n- EXTRATIVO: copie títulos de módulos/trilhas exatamente como aparecem (pode remover emoji). Frases de\n  \"público\", \"aprende\" e \"constrói\" devem reusar as palavras da página; não invente nada.\n- Não inclua preço, gratuidade, promoções, depoimentos ou números de alunos.\n- Se um campo não estiver na página, use [] ou null.\nResponda SOMENTE JSON: {\"estrutura\":[{\"titulo\":\"\",\"detalhe\":\"\"}],\"aprende\":[\"\"],\"publico\":[\"\"],\n\"constroi\":[\"\"],\"pre_requisitos\":[\"\"],\"carga_horaria\":null,\"nivel\":null}\nLimites: estrutura até 12 itens — só trilhas/módulos/aulas do conteúdo, nunca seções da página\n(\"Para quem é\", \"FAQ\", \"Comece agora\")."},
+        {"rot": "Rodar a trava (validar_extracao.mjs)", "icone": "terminal",
+         "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = texto da página real do item\nnode tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\nnode tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\""},
+        {"rot": "fonte.txt usado no exemplo", "icone": "arquivo",
+         "conteudo": "Curso de pão de fermentação natural\nMódulo 1: O levain do zero\nMódulo 2: Hidratação e dobras\nMódulo 3: Forno doméstico\nCarga: 6 aulas de 20 minutos.\nPara quem já faz pão com fermento comum e quer migrar para o levain."}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Saída capturada (19/10/2026)", "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Aprenda a vender seus pães no Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"},
+          {"rot": "Como ler", "html": "<ul><li><b>Primeira</b>: título de módulo copiado da fonte. Passa nas três.</li><li><b>Segunda</b>: a fonte diz 6 aulas; o \"12\" foi inventado. Reprovada pelo número.</li><li><b>Terceira</b>: \"vender no Instagram\" não está na página. Reprovada por não reusar as palavras da fonte.</li></ul><p>Item reprovado é descartado, não corrigido à mão para passar.</p>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: três fichas de verdade",
+      "sub": "Escolha 3 itens do seu catálogo que têm página própria com texto.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Extrair três fichas", "min": "40 min",
+         "texto": "Salve o texto da página de cada item num arquivo e rode o prompt extrativo com o agente da sua assinatura.",
+         "pronto": "você tem 3 arquivos JSON no formato do prompt, sem preço, depoimento nem número de clientes."},
+        {"id": "e2", "titulo": "E2 · Passar pela trava", "min": "30 min",
+         "texto": "Rode o validar_extracao.mjs em cada título e frase das 3 fichas. Descarte o que reprovar.",
+         "pronto": "uma anotação lista cada item com o resultado da trava, os reprovados saíram, e só ficha com 3 ou mais módulos válidos foi marcada para publicar."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "A trava reprovou uma frase porque o número não está na fonte. O que fazer?",
+         "opcoes": ["Editar a frase até passar.", "Descartar o item.", "Publicar com aviso.", "Trocar o número por \"vários\"."],
+         "certa": 1, "explica": "Item que falha é descartado, não consertado. Melhor uma ficha menor do que uma ficha mentirosa.", "ref": "diagrama", "cert": true},
+        {"p": "Por que as 283 fichas do INEMA não indexavam?",
+         "opcoes": ["Faltava llms.txt.", "Eram finas e parecidas: 170 a 240 palavras, 47% de vocabulário em comum, FAQ idêntico, publicadas de uma vez.", "O robots.txt bloqueava.", "Não tinham imagem."],
+         "certa": 1, "explica": "Lote grande de páginas finas e quase iguais. A correção foi conteúdo extraído da fonte real e publicação em lotes.", "ref": "passos"},
+        {"p": "O que o prompt extrativo proíbe?",
+         "opcoes": ["Copiar títulos da página.", "Preço, promoção, depoimento e número de alunos.", "Responder em JSON.", "Deixar campo vazio."],
+         "certa": 1, "explica": "São os dados que mais mudam e que mais tentam a IA a inventar. Campo ausente fica vazio.", "ref": "codigo"},
+        {"p": "Uma ficha passou na trava com só 2 módulos válidos. Ela entra como enriquecida?",
+         "opcoes": ["Sim.", "Não: o mínimo é 3 módulos válidos.", "Sim, se tiver FAQ.", "Só em inglês."],
+         "certa": 1, "explica": "Com menos de 3, ela não tem corpo suficiente para ser publicada como enriquecida.", "ref": "diagrama"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Fonte real", "texto": "Cada ficha sai da página do próprio item."},
+        {"t": "Trava", "texto": "Título, palavras e números conferidos; o que falha sai."},
+        {"t": "Em lotes", "texto": "Publicar centenas de uma vez foi o que travou o rastreio."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "validar_extracao.mjs (inemaSEO, MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/validar_extracao.mjs", "icone": "terminal"},
+        {"t": "prompt-ficha-extrativa.md (inemaSEO, MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/prompt-ficha-extrativa.md", "icone": "arquivo"},
+        {"t": "Google: políticas de spam, conteúdo escalado (inglês)", "href": "https://developers.google.com/search/docs/essentials/spam-policies", "icone": "escudo"}
+      ]
+    }
+  ]
+}

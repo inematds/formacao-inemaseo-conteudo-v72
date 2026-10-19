@@ -1,0 +1,122 @@
+{
+  "slug": "links-internos",
+  "num": 6,
+  "menu": "Links",
+  "titulo": "Links internos e a escada de links",
+  "titulo_curto": "Links internos",
+  "minutos": 15,
+  "lead": "Para o buscador, página sem link é página que quase não existe. Toda página nova precisa de caminho até ela, no HTML que o servidor entrega, e de links saindo dela para o pilar e as irmãs. A escada de links é o hábito que garante isso: publicou, edite duas ou três páginas antigas para apontar para a nova.",
+  "objetivo": "ligar cada página nova ao pilar e às irmãs e editar 2–3 páginas antigas para apontar para ela, no mesmo commit.",
+  "competencias": ["aplicar-regra-de-links", "fazer-escada-de-links", "conferir-links-no-html"],
+  "aprende": [
+    {"t": "A regra fixa de links: home, pilar, página"},
+    {"t": "A escada de links a cada publicação"},
+    {"t": "Âncora descritiva em vez de \"clique aqui\""},
+    {"t": "O caso do catálogo que perdeu os links"}
+  ],
+  "hero_alt": "Escada de madeira de uma casa antiga vista de lado, com portas abertas para os cômodos de cada andar.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Quem linka para quem",
+      "sub": "Clique em cada degrau.",
+      "estilo": "escada",
+      "nos": [
+        {"icone": "lupa", "titulo": "Home", "sub": "→ pilares e catálogo",
+         "detalhe": "A home leva aos pilares e ao catálogo. É a porta de entrada que o rastreador visita mais."},
+        {"icone": "camadas", "titulo": "Pilar", "sub": "→ perguntas, itens, pilares", "forte": true,
+         "detalhe": "O pilar linka todas as páginas de pergunta do seu tema, alguns itens curados do catálogo e os outros pilares."},
+        {"icone": "chat", "titulo": "Página", "sub": "→ pilar, irmãs, catálogo",
+         "detalhe": "Cada página de pergunta linka o pilar (pai), 2 a 4 irmãs e 2 itens do catálogo. Âncora descritiva: \"como fazer levain\", nunca \"clique aqui\"."},
+        {"icone": "seta", "titulo": "Escada", "sub": "antigas → nova", "forte": true,
+         "detalhe": "Publicou uma página nova? Edite 2 ou 3 páginas antigas do mesmo tema para apontar para ela, no mesmo commit da publicação."}
+      ],
+      "legenda": "Links que contam são os que estão no HTML entregue pelo servidor, sem depender de JavaScript."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "A cada página nova",
+      "sub": "Clique em cada passo.",
+      "passos": [
+        {"titulo": "Links de saída", "sub": "da nova",
+         "texto": ["No corpo, 2 a 4 links com âncora descritiva. No fim, um bloco \"Leia também\" com o pilar e as irmãs.", "Todos os links respondem 200 (o raio-x do curso 1 confere)."]},
+        {"titulo": "Escada", "sub": "para a nova",
+         "texto": ["Escolha 2 ou 3 páginas antigas do mesmo tema onde o link faz sentido para o leitor, e acrescente uma frase com link.", "O pilar do tema sempre ganha o link para a nova."]},
+        {"titulo": "Mesmo commit", "sub": "não deixar para depois",
+         "texto": ["A página nova e as edições da escada sobem juntas. \"Depois eu linko\" é como nascem páginas órfãs."]},
+        {"titulo": "Conferir no HTML", "sub": "o que o robô vê",
+         "texto": ["Rode o raio-x na página nova e nas antigas: a linha \"links internos no HTML\" mostra se os links estão no HTML do servidor.", "Catálogo com busca no navegador também precisa de links no HTML: um índice recolhido (details) resolve sem mudar o visual."],
+         "exemplo": {"rot": "No INEMA", "texto": "Em 30/09/2026 a página de cursos virou \"só busca\" e 310 fichas perderam o único link interno renderizado no servidor. A correção foi um índice recolhido, sem mudança visual."}}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Mapa de links, bloco da escada e a conferência",
+      "sub": "Anote o mapa antes de publicar.",
+      "blocos": [
+        {"rot": "Mapa de links de uma página nova", "icone": "lista",
+         "conteudo": "Página nova: <url>\nPilar (pai): <url>\nIrmãs (2–4): <url> · <url>\nCatálogo (2): <url> · <url>\nEscada (2–3 antigas que passam a linkar a nova):\n- <url antiga 1>: frase \"<texto da âncora>\"\n- <url antiga 2>: frase \"<texto da âncora>\"\n- pilar: entrada na lista do tema"},
+        {"rot": "Índice recolhido para catálogo com busca", "icone": "arquivo",
+         "conteudo": "<details>\n  <summary>Todos os itens do catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain do zero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Forno doméstico</a></li>\n  </ul>\n</details>"},
+        {"rot": "Conferir com o raio-x", "icone": "terminal",
+         "conteudo": "tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/\n# linha \"links internos no HTML\" de cada página\n# e, na antiga, procure o endereço da nova:\ncurl -s https://www.seusite.com/antiga-1/ | grep -c 'href=\"/pagina-nova/\"'"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Saída capturada (19/10/2026)", "html": "<pre>$ tools/auditoria.sh https://www.inema.club / /cursos/\n-- /  [200]\n   links internos no HTML: 27\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   links internos no HTML: 335</pre><p>Com o índice recolhido, a página de cursos entrega os links no HTML do servidor, mesmo sendo uma busca no navegador.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>\"Clique aqui\"</b>: a âncora não diz do que é a página.</li><li><b>Links só por JavaScript</b>: o rastreador pode não ver.</li><li><b>Bloco \"outros sites da rede\"</b> em toda página: link entre sites é contextual e raro.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: ligar a sua página",
+      "sub": "Use a página de pergunta da aula 4.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Mapa de links", "min": "20 min",
+         "texto": "Preencha o mapa de links da sua página nova: pilar, irmãs, catálogo e as 2 ou 3 antigas da escada.",
+         "pronto": "o mapa tem pilar, pelo menos 2 irmãs e 2 antigas escolhidas, cada uma com a frase da âncora escrita."},
+        {"id": "e2", "titulo": "E2 · Escada publicada", "min": "30 min",
+         "texto": "Publique a página nova e as edições da escada no mesmo commit. Rode o raio-x e o grep nas antigas.",
+         "pronto": "o grep encontra o endereço da nova em cada página antiga da escada, e o raio-x mostra links internos no HTML da nova."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "O que é a escada de links?",
+         "opcoes": ["Comprar links de outros sites.", "Editar 2 ou 3 páginas antigas do mesmo tema para apontar para a nova, no mesmo commit.", "Pôr todos os links no rodapé.", "Uma ferramenta paga."],
+         "certa": 1, "explica": "É o hábito que impede a página nova de nascer órfã.", "ref": "diagrama", "cert": true},
+        {"p": "O catálogo virou uma busca no navegador e as fichas sumiram do índice. Causa provável?",
+         "opcoes": ["Falta de FAQ.", "Os links das fichas não estão mais no HTML entregue pelo servidor.", "Título longo.", "Excesso de imagens."],
+         "certa": 1, "explica": "Foi o caso do INEMA: 310 fichas perderam o único link renderizado no servidor. Um índice recolhido resolveu.", "ref": "passos"},
+        {"p": "Qual âncora é melhor?",
+         "opcoes": ["\"clique aqui\"", "\"saiba mais\"", "\"como fazer levain em casa\"", "\"link\""],
+         "certa": 2, "explica": "Âncora descritiva diz ao leitor e ao buscador do que é a página de destino.", "ref": "diagrama"},
+        {"p": "Para onde a página de pergunta deve linkar?",
+         "opcoes": ["Só para a home.", "Pilar, 2 a 4 irmãs e 2 itens do catálogo.", "Para todos os sites da rede.", "Para nenhuma, para não perder força."],
+         "certa": 1, "explica": "É a regra fixa da etapa 7 do método.", "ref": "diagrama"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Regra fixa", "texto": "Home → pilares; pilar → perguntas; página → pilar, irmãs, catálogo."},
+        {"t": "Escada", "texto": "2 ou 3 antigas apontam para a nova, no mesmo commit."},
+        {"t": "No HTML", "texto": "Confira no raio-x: link que só existe no JavaScript pode não contar."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google: links rastreáveis e âncoras (inglês)", "href": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable", "icone": "lupa"},
+        {"t": "auditoria.sh (inemaSEO, MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh", "icone": "terminal"}
+      ]
+    }
+  ]
+}

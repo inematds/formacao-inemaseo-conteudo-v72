@@ -1,0 +1,219 @@
+{
+  "slug": "sem-spam",
+  "num": 8,
+  "menu": "Sem spam",
+  "titulo": "Conteúdo escalado e spam: o que não fazer",
+  "titulo_curto": "O que não fazer",
+  "minutos": 20,
+  "lead": "Com IA, publicar mil páginas custa quase nada. É exatamente por isso que o Google mira o conteúdo escalado: muitas páginas feitas para manipular ranking, \"não importa como sejam criadas\". Esta aula mostra os atalhos que circulam, por que cada um é risco, e o caminho certo: o checklist dos 16 itens e uma cadência que cabe na revisão humana.",
+  "objetivo": "reconhecer conteúdo escalado e esquemas de link e passar cada página pelo checklist dos 16 itens antes de publicar.",
+  "competencias": ["reconhecer-conteudo-escalado", "recusar-esquema-de-links", "aplicar-checklist-16", "planejar-cadencia"],
+  "aprende": [
+    {"t": "Os atalhos que circulam e por que cada um é risco"},
+    {"t": "O que a política de spam do Google diz em 2026"},
+    {"t": "O checklist dos 16 itens antes de publicar"},
+    {"t": "Conversar com quem quer volume e montar o seu plano"}
+  ],
+  "hero_alt": "Pilha enorme de folhas idênticas ao lado de um único livro bem encadernado sobre a mesa.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Atalho ou caminho",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "x", "titulo": "Volume", "sub": "mil artigos, um por palavra",
+         "itens": [{"icone": "robo", "t": "agentes publicando sem parar"}, {"icone": "camadas", "t": "5 variações por palavra-chave"}],
+         "detalhe": "Conteúdo escalado (scaled content abuse): muitas páginas sem valor para manipular ranking. Bate com o caso real da aula 5: o lote de páginas finas não indexou."},
+        {"icone": "x", "titulo": "Esquema de links", "sub": "rede de sites cruzados",
+         "detalhe": "Vários sites seus linkando uns aos outros, \"20 links por post\". É link spam, e uma ação manual pode derrubar todos os domínios de uma vez."},
+        {"icone": "x", "titulo": "Disfarce", "sub": "\"humanizar\" e reescrever o top 10",
+         "detalhe": "Passar texto em \"humanizador para burlar detector\" mira a métrica errada: não há política do Google sobre detector; ele avalia valor. Paráfrase em escala para enganar só produz mais páginas sem valor. Raspar o top 10 e reescrever é conteúdo derivado."},
+        {"icone": "x", "titulo": "Atalho de índice", "sub": "e de domínio alheio",
+         "detalhe": "Indexing API do Google para post comum (ela só vale para vagas de emprego e transmissões ao vivo), indexador pago, e SEO parasita em Reddit ou LinkedIn para \"ranquear em 24 h\" (site reputation abuse)."},
+        {"icone": "check", "titulo": "Caminho", "sub": "checklist + cadência", "forte": true,
+         "detalhe": "Cada página com dado próprio, passada pelos 16 itens, revisada por humano, no máximo 3 novas por semana no mesmo cluster. O Google avalia valor, não ferramenta: IA para pesquisar e organizar o que é seu é permitido."}
+      ],
+      "legenda": "As mesmas políticas de spam valem para as respostas de IA do Google desde 08/05/2026."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "O que a política diz, em quatro frases",
+      "sub": "Clique em cada uma.",
+      "passos": [
+        {"titulo": "Não é a ferramenta", "sub": "é o valor",
+         "texto": ["Usar IA não é proibido. O guia do Google sobre conteúdo gerado com IA aceita IA para pesquisar e estruturar conteúdo original que a pessoa escreve ou valida."]},
+        {"titulo": "Escala sem valor", "sub": "desde março de 2024",
+         "texto": ["A política de conteúdo escalado cita: muitas páginas geradas sem valor, raspar resultados, juntar conteúdo de outras páginas sem acrescentar nada, traduzir ou trocar sinônimos para disfarçar, e criar vários sites para esconder a escala."]},
+        {"titulo": "Vale para a IA", "sub": "08/05/2026",
+         "texto": ["O Google esclareceu que as políticas de spam se aplicam também às respostas de IA generativa. E, desde 13/04/2026, denúncias de spam podem ser usadas para ação manual."]},
+        {"titulo": "Promessa irreal", "sub": "posição 1 em horas",
+         "texto": ["\"Primeiro lugar em 60 segundos\" costuma ser palavra sem concorrência, prova escolhida a dedo e resultado instável. Não prometa, não compre."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "O checklist dos 16 itens",
+      "sub": "Do inemaSEO, adaptado à régua de 2026 nos itens 1 e 7. Passe cada página antes de publicar.",
+      "blocos": [
+        {"rot": "CHECKLIST.md (adaptado)", "icone": "check",
+         "conteudo": "| # | Verificação | Bloqueia? |\n|---|---|---|\n| 1 | Resposta direta no começo, sem \"neste artigo vamos…\" (clareza para o leitor) | sim |\n| 2 | ≥ 1 dado próprio verificável, com link para a evidência | sim |\n| 3 | Nenhum número ou citação sem fonte; nada inventado pela IA | sim |\n| 4 | Não canibaliza: a palavra-chave principal não é de outra página sua | sim |\n| 5 | Título 50–60 caracteres com a palavra-chave; descrição 140–155; um H1 só | sim |\n| 6 | Links internos: pilar + ≥ 2 irmãs + ≥ 2 itens do catálogo; todos 200 | sim |\n| 7 | JSON-LD válido e igual ao texto visível; FAQ só com ≥ 3 perguntas reais, sem esperar rich result (acabou em 07/05/2026) | sim |\n| 8 | Data de atualização real | sim |\n| 9 | Leitura humana: tem opinião e \"o que deu errado\"; soa como o autor | sim |\n| 10 | Teste da troca: trocou a palavra-chave e o parágrafo segue válido? Reescreva | sim |\n| 11 | Cadência: ≤ 3 páginas novas por semana no mesmo cluster | sim |\n| 12 | Tradução só com hreflang recíproco | sim |\n| 13 | Bloco de autor com link para a página de autor (sameAs) | sim |\n| 14 | Escada de links feita: 2–3 antigas apontando para a nova, no mesmo commit | sim |\n| 15 | Pós-publicação: URL 200, título, canônico e JSON-LD presentes; buscadores avisados | sim |\n| 16 | Imagens e diagramas próprios quando ajudam (não banco de imagem) | não |"},
+        {"rot": "Plano de cadência (4 semanas)", "icone": "calendario",
+         "conteudo": "Cluster: <nome>\nSemana 1: <página> · <página>          (≤ 3)\nSemana 2: <página> · escada das anteriores\nSemana 3: <página> · <página>\nSemana 4: revisão: o que indexou? (curso 3)\nRevisão humana: <quem> · <10–20 min por página>"}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Por que adaptar 1 e 7", "html": "<p>O checklist original pede resposta nas primeiras 60 palavras \"no formato que os buscadores de IA citam\" e FAQ marcada para vitrine. Pela régua de 2026: resposta curta é clareza, sem fonte que a sustente como fator de IA, e o rich result de FAQ deixou de aparecer em 07/05/2026.</p>"},
+          {"rot": "Sinal de alerta", "html": "<p>Do Plano B do método: <b>queda geral depois de publicar muito</b> é sinal de conteúdo em escala. A resposta é parar, auditar com o checklist, fundir ou remover as fracas e baixar a cadência.</p>"}
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Conversa simulada: o sócio quer publicar 500 artigos com IA",
+      "sub": "Conversa fictícia para treinar. Escolha a resposta que você daria; o comentário aparece logo depois.",
+      "personagem": {"nome": "Sócio da torrefação", "papel": "loja online de cafés · quer crescer rápido"},
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "Achei uma ferramenta que gera 500 artigos por mês com IA, um para cada palavra-chave de café. Em três meses a gente domina o Google. Vamos ligar?",
+          "opcoes": [
+            {"t": "Vamos. Quanto mais página, mais chance de aparecer.", "vai": "fim-queda", "nota": 0,
+             "comenta": "É a definição de conteúdo escalado: muitas páginas sem valor para manipular ranking. Volume não é chance; é risco."},
+            {"t": "Antes: o que cada um desses artigos teria que só a nossa torrefação sabe?", "vai": "dado", "nota": 2,
+             "comenta": "Pergunta certa. O que conta é conteúdo não-commodity: dado e experiência próprios."},
+            {"t": "Não pode, o Google proíbe texto feito por IA.", "vai": "mito", "nota": 1,
+             "comenta": "Freou o erro, mas com um argumento falso. O Google avalia valor, não ferramenta."}
+          ]
+        },
+        "mito": {
+          "cliente": "Proíbe? Mas todo mundo usa IA. Então todo mundo é punido?",
+          "opcoes": [
+            {"t": "Me corrijo: o Google não pune a ferramenta, pune página sem valor feita em escala. A pergunta é o que cada artigo teria de nosso.", "vai": "dado", "nota": 1,
+             "comenta": "Voltou para o caminho certo, com uma volta a mais."},
+            {"t": "É, então é melhor não usar IA para nada.", "vai": "fim-parado", "nota": 0,
+             "comenta": "Exagero na outra direção: IA para pesquisar e organizar o que é seu é permitido e economiza tempo."}
+          ]
+        },
+        "dado": {
+          "cliente": "Nosso? A ferramenta pega os 10 primeiros do Google e escreve um texto melhor que todos.",
+          "opcoes": [
+            {"t": "Isso é conteúdo derivado. Vamos usar a IA para organizar o que é nosso: as fichas de torra, as notas de prova, as perguntas dos clientes.", "vai": "humaniza", "nota": 2,
+             "comenta": "Trocou reescrita de terceiros por dado próprio, que é o critério que mais pesa no score da aula 3."},
+            {"t": "Se ficar bem escrito, passa.", "vai": "fim-queda", "nota": 0,
+             "comenta": "Raspar e reescrever o top 10 é citado pela política como juntar conteúdo sem acrescentar valor."},
+            {"t": "Tá, mas baixa para 100 por mês.", "vai": "humaniza", "nota": 1,
+             "comenta": "Menos volume reduz o estrago, mas 100 páginas sem dado próprio continuam sendo escala sem valor."}
+          ]
+        },
+        "humaniza": {
+          "cliente": "E se a gente passar os textos num humanizador, para nenhum detector de IA pegar?",
+          "opcoes": [
+            {"t": "O Google não usa detector, ele avalia se a página ajuda. Humanizar em escala é paráfrase para enganar: só faz mais página sem valor.", "vai": "plano", "nota": 2,
+             "comenta": "Correto e sem inventar penalidade: o risco real é a escala sem valor, não o detector."},
+            {"t": "Boa, aí fica garantido.", "vai": "fim-queda", "nota": 0,
+             "comenta": "Mirou a métrica errada. A página continua sem valor, agora disfarçada."}
+          ]
+        },
+        "plano": {
+          "cliente": "Tá bom, me convenceu. Então qual é o plano?",
+          "opcoes": [
+            {"t": "Até 3 páginas por semana por tema, cada uma com um dado nosso, passando pelo checklist dos 16 itens e por uma revisão sua de 15 minutos.", "vai": "fim-bom", "nota": 2,
+             "comenta": "Cadência que cabe na revisão humana, com dado próprio e portão de qualidade."},
+            {"t": "Fazemos 5 sites de café com links cruzados, para dividir o risco.", "vai": "fim-rede", "nota": 0,
+             "comenta": "Rede de sites com links cruzados é esquema de links. Em vez de dividir o risco, junta todos os domínios na mesma ação manual."}
+          ]
+        },
+        "fim-queda": {"fim": true, "titulo": "Volume virou queda", "texto": "Centenas de páginas parecidas entraram de uma vez. A maioria nem foi indexada, e o site inteiro passou a ser visto como conteúdo em escala. Agora o trabalho é remover e fundir antes de voltar a crescer."},
+        "fim-parado": {"fim": true, "titulo": "Medo no lugar de método", "texto": "A loja desistiu da IA e também do conteúdo. O problema nunca foi a ferramenta: era publicar sem dado próprio. Com o checklist, a IA teria ajudado."},
+        "fim-rede": {"fim": true, "titulo": "Cinco sites, um problema", "texto": "A rede de sites com links cruzados chamou atenção como esquema de links. Uma ação manual pode atingir todos os domínios de uma vez."},
+        "fim-bom": {"fim": true, "titulo": "Menos páginas, todas nossas", "texto": "Três páginas por semana, cada uma com uma ficha de torra ou uma nota de prova da casa, revisadas e ligadas pela escada de links. Cresce mais devagar e não precisa ser desfeito depois."}
+      },
+      "licao": "Quem quer volume quer resultado. Responda com a pergunta do dado próprio, desmonte os mitos sem inventar penalidade e entregue uma cadência que cabe na revisão humana."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: o seu portão",
+      "sub": "Use a página de pergunta da aula 4.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Checklist aplicado", "min": "30 min",
+         "texto": "Passe a sua página pelos 16 itens e anote sim ou não em cada um. Corrija os que bloqueiam.",
+         "pronto": "os 15 itens que bloqueiam estão marcados \"sim\", com o que foi corrigido anotado ao lado."},
+        {"id": "e2", "titulo": "E2 · Cadência de 4 semanas", "min": "20 min",
+         "texto": "Monte o plano de 4 semanas para um cluster da aula 3, com no máximo 3 páginas novas por semana e o nome de quem revisa.",
+         "pronto": "o plano tem as 4 semanas, nenhuma passa de 3 páginas no cluster e a semana 4 é de revisão."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "O que a política de conteúdo escalado mira?",
+         "opcoes": ["Todo texto feito com IA.", "Muitas páginas sem valor feitas para manipular ranking, não importa como foram criadas.", "Sites com mais de 100 páginas.", "Páginas sem imagem."],
+         "certa": 1, "explica": "O critério é valor, não ferramenta. IA para organizar conteúdo seu é permitido.", "ref": "passos", "cert": true},
+        {"p": "\"Humanizar o texto para o detector não pegar\" resolve o quê?",
+         "opcoes": ["Evita penalidade do Google.", "Nada: o Google avalia se a página ajuda, e paráfrase em escala só cria mais página sem valor.", "Melhora a posição.", "Garante indexação."],
+         "certa": 1, "explica": "Não há política do Google sobre detector. O risco é a escala sem valor, que o disfarce não muda.", "ref": "diagrama"},
+        {"p": "Para que serve de fato a Indexing API do Google?",
+         "opcoes": ["Para qualquer post novo.", "Só para vagas de emprego (JobPosting) e transmissões ao vivo (BroadcastEvent).", "Para sites com IA.", "Para notícias."],
+         "certa": 1, "explica": "Fora desses dois tipos, viola os termos. O caminho é sitemap, Search Console e IndexNow (curso 1).", "ref": "diagrama"},
+        {"p": "O site caiu depois de publicar muito em pouco tempo. Primeiro passo?",
+         "opcoes": ["Publicar mais para compensar.", "Parar, auditar com o checklist, fundir ou remover as fracas e baixar a cadência.", "Comprar links.", "Trocar de domínio."],
+         "certa": 1, "explica": "É o Plano B do método para o sinal de conteúdo em escala.", "ref": "codigo"}
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "O mapa do conteúdo",
+      "sub": "Quatro degraus e os exercícios de cada um. Clique num exercício para ver o \"pronto quando\".",
+      "degraus": [
+        {"aula": "entidade", "icone": "marca", "quando": "Semana 1", "titulo": "Quem", "sub": "entidade e colisão de nome", "saida": "Person e Organization com @id fixo em todas as páginas.", "passo": "Antes de escrever em nome da marca, diga quem ela é. O teste de colisão vira linha de base para o curso 4."},
+        {"aula": "palavra-chave", "icone": "alvo", "quando": "Semana 1 e 2", "titulo": "Pauta", "sub": "território e score (aulas 2 e 3)", "saida": "Mapa de páginas donas e 10 termos pontuados.", "passo": "Requer a entidade. O território diz onde cada página mora; o score diz quais valem a pena."},
+        {"aula": "pilar-perguntas", "icone": "texto", "quando": "Semanas 2 a 4", "titulo": "Páginas", "sub": "pilar, fichas, links, notícias (aulas 4 a 7)", "saida": "Primeira página de pergunta, fichas com trava, escada feita.", "passo": "Requer a pauta. São as aulas 4 a 7; o mapa mostra os exercícios da aula 4, e o plano abaixo lista todos."},
+        {"aula": "sem-spam", "icone": "escudo", "quando": "Toda semana", "titulo": "Guarda", "sub": "checklist e cadência", "saida": "Checklist dos 16 aplicado e plano de 4 semanas.", "passo": "Vale para toda página daqui em diante: nada sobe sem passar pelos 16 itens."}
+      ],
+      "resultado": {"titulo": "Ao final do curso", "texto": "Entidade declarada, pauta validada de graça, páginas com dado próprio ligadas por links e um portão contra os atalhos.", "total": "16 exercícios"},
+      "rolagem_fim": {"titulo": "O conteúdo inteiro", "texto": "Quem, pauta, páginas e guarda. Só suba de degrau quando o \"pronto quando\" do anterior for verdade."},
+      "legenda": "Depois do conteúdo vem o curso 3: medir o que funcionou, separando a sua marca."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Gere o seu plano com datas",
+      "sub": "Escolha a data de início e quanto tempo você tem por semana.",
+      "curso": "inemaSEO 2 · Conteúdo",
+      "horas_padrao": 3,
+      "degraus": [
+        {"titulo": "Aula 1 · Entidade", "aula": "entidade"},
+        {"titulo": "Aula 2 · Território e página dona", "aula": "territorio"},
+        {"titulo": "Aula 3 · Validar palavra-chave", "aula": "palavra-chave"},
+        {"titulo": "Aula 4 · Pilar e perguntas", "aula": "pilar-perguntas"},
+        {"titulo": "Aula 5 · Fichas com dado real", "aula": "fichas-dado-real"},
+        {"titulo": "Aula 6 · Links internos", "aula": "links-internos"},
+        {"titulo": "Aula 7 · Notícias com página própria", "aula": "noticias"},
+        {"titulo": "Aula 8 · O que não fazer", "aula": "sem-spam"}
+      ],
+      "txt": {"titulo": "Plano — inemaSEO 2 · Conteúdo", "inicio": "Início", "ritmo": "Ritmo", "termino": "Término previsto", "ate": "até", "pronto": "pronto quando", "semanas": "semanas", "travou": "## O que travou e o que eu decidi", "h": "h por semana", "exs": "exercícios"}
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Valor, não ferramenta", "texto": "IA para organizar o que é seu; nunca para fabricar volume."},
+        {"t": "Atalhos são risco", "texto": "Rede de sites, mil artigos, disfarce, indexação forçada e domínio alheio."},
+        {"t": "Portão", "texto": "16 itens e no máximo 3 páginas novas por semana no mesmo cluster."},
+        {"t": "Régua de 2026", "texto": "As políticas de spam valem também para as respostas de IA do Google (08/05/2026)."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Google: políticas de spam (inglês)", "href": "https://developers.google.com/search/docs/essentials/spam-policies", "icone": "escudo"},
+        {"t": "Google: conteúdo gerado com IA (inglês)", "href": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content", "icone": "robo"},
+        {"t": "Checklist de qualidade do inemaSEO (MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md", "icone": "check"},
+        {"t": "inemaSEO sistemas: ferramentas abertas", "href": "https://github.com/inematds/inemaseo-sistemas", "icone": "terminal"}
+      ]
+    }
+  ]
+}

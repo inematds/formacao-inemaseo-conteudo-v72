@@ -1,0 +1,125 @@
+{
+  "slug": "territorio",
+  "num": 2,
+  "menu": "Território",
+  "titulo": "Um território por site e uma página dona por intenção",
+  "titulo_curto": "Território e página dona",
+  "minutos": 15,
+  "lead": "Quem tem mais de um site, ou um blog, uma loja e uma página de eventos, costuma escrever a mesma coisa em vários lugares. O resultado é que as suas páginas disputam a mesma busca entre si e perdem as duas. Esta aula decide onde mora cada tipo de conteúdo e quem é a página dona de cada intenção.",
+  "objetivo": "decidir onde mora cada tipo de conteúdo e escrever o mapa de canônicos: uma página dona por intenção de busca.",
+  "competencias": ["definir-territorio-por-site", "mapear-intencao-de-busca", "evitar-canibalizacao"],
+  "aprende": [
+    {"t": "O que é território e por que ele evita canibalização"},
+    {"t": "Onde mora o evergreen, a novidade e o evento"},
+    {"t": "Montar o mapa de canônicos por intenção"},
+    {"t": "O que fazer com a página que perdeu a disputa"}
+  ],
+  "hero_alt": "Mapa de papel com bairros marcados por alfinetes coloridos em áreas separadas, visto de cima.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Cada coisa no seu lugar",
+      "sub": "Clique em cada bloco.",
+      "nos": [
+        {"icone": "camadas", "titulo": "Tipos de conteúdo", "sub": "o que você publica",
+         "itens": [{"icone": "texto", "t": "\"o que é\", \"como fazer\", guias"}, {"icone": "megafone", "t": "novidade com data"}, {"icone": "calendario", "t": "agenda e inscrição"}],
+         "detalhe": "Antes de escrever, classifique: o assunto vale daqui a um ano (evergreen), envelhece com a data (novidade) ou é um encontro marcado (evento)?"},
+        {"icone": "lupa", "titulo": "Site principal", "sub": "evergreen e pilares", "forte": true,
+         "detalhe": "Guias, pilares, \"o que é\", \"como fazer\" e catálogo moram num domínio só. É onde a autoridade acumula."},
+        {"icone": "megafone", "titulo": "Notícias", "sub": "novidade com data",
+         "detalhe": "Lançamento, \"o que mudou\", notícia. Envelhece sem disputar com o guia. Não escreve página \"o que é X\": essa é do site principal."},
+        {"icone": "calendario", "titulo": "Eventos", "sub": "agenda e gravação",
+         "detalhe": "Uma página por evento, com marcação de evento. Guia permanente sobre o tema do evento mora no site principal, e o evento linka para ele."},
+        {"icone": "alvo", "titulo": "Página dona", "sub": "uma por intenção", "forte": true,
+         "detalhe": "Para cada intenção de busca, uma página só responde. As outras linkam para ela ou redirecionam (301). Duas páginas suas na mesma busca perdem as duas."}
+      ],
+      "legenda": "Regra de ouro: uma intenção de busca = uma página dona = um site."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Do inventário ao mapa",
+      "sub": "Clique em cada passo.",
+      "passos": [
+        {"titulo": "Listar os sites", "sub": "e o que cada um faz",
+         "texto": ["Site, blog, loja, página de eventos, subdomínios, perfis com páginas próprias. Para cada um: o que é dele e o que ele NÃO faz.", "O \"não faz\" é o que evita a disputa."]},
+        {"titulo": "Listar as intenções", "sub": "o que a pessoa quer",
+         "texto": ["Intenção é o que a pessoa quer resolver, não a palavra exata. \"como gerenciar agentes\" e \"gestão de agentes de IA\" são a mesma intenção.", "Comece pelas 5 intenções mais importantes do seu negócio."]},
+        {"titulo": "Escolher a dona", "sub": "uma por intenção",
+         "texto": ["Para cada intenção, escolha a página mais completa, no site certo pelo território.", "As outras viram apoio: linkam para a dona com texto descritivo, ou são fundidas e redirecionadas."],
+         "exemplo": {"rot": "No INEMA", "texto": "A intenção \"gestão de agentes de IA\" tem dona no site principal; a página do evento sobre o tema continua como evento e linka para o guia."}},
+        {"titulo": "Conferir antes de criar", "sub": "toda página nova",
+         "texto": ["Antes de nascer uma página, procure se já existe outra sua respondendo a mesma busca: no site, no blog, nas FAQs, nos eventos.", "Se existe, melhore a dona em vez de criar uma concorrente."]}
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Os dois quadros que você vai preencher",
+      "sub": "Copie para uma planilha ou um arquivo de texto.",
+      "blocos": [
+        {"rot": "Quadro de território", "icone": "lista",
+         "conteudo": "| Site | Território (só isso) | O que NÃO faz |\n|---|---|---|\n| www.seusite.com | guias, pilares, \"o que é\", catálogo | notícia com data, agenda |\n| blog/notícias | novidade com data, \"o que mudou\" | página \"o que é X\" |\n| eventos | agenda, página por evento, gravação | guia permanente |"},
+        {"rot": "Mapa de canônicos por intenção", "icone": "alvo",
+         "conteudo": "| Intenção | Página dona | Páginas que passam a linkar (ou 301) |\n|---|---|---|\n| <intenção 1> | https://www.seusite.com/<dona>/ | <página concorrente> → linka a dona |\n| <intenção 2> | ... | <FAQ antiga> → 301 para a dona |"},
+        {"rot": "Antes de criar página: procurar concorrente", "icone": "terminal",
+         "conteudo": "# no repositório do site, procure a palavra principal da nova página\ngrep -ril \"gestão de agentes\" conteudo/ paginas/ | head\n# no Google: site:seusite.com \"gestão de agentes\""}
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {"rot": "Por que o território importa", "html": "<p>No INEMA, a linha de base de 28 dias (25/08 a 21/09/2026) mostrou que <b>639 de 647 cliques</b> vinham de quem já buscava a marca. As buscas genéricas somavam 8 cliques e 72 impressões.</p><p>Com o catálogo espalhado entre o site principal, os cursos em outro domínio, as FAQs e as notícias, várias páginas respondiam a mesma busca. O território foi a primeira decisão antes de escrever conteúdo novo.</p>"},
+          {"rot": "Erros comuns", "html": "<ul><li><b>Notícia virando guia</b>: \"o que é X\" no blog de novidades disputa com o pilar.</li><li><b>Duas FAQs para a mesma pergunta</b>: escolha uma dona e redirecione a outra.</li><li><b>Bloco \"outros sites da rede\"</b> em toda página: link entre sites é contextual e raro.</li></ul>"}
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Prática: o seu mapa",
+      "sub": "Uma planilha basta.",
+      "exercicios": [
+        {"id": "e1", "titulo": "E1 · Quadro de território", "min": "20 min",
+         "texto": "Liste todos os seus sites e subdomínios com o território de cada um e o que ele não faz.",
+         "pronto": "cada site tem uma linha com \"território\" e \"não faz\" preenchidos, e nenhum tipo de conteúdo aparece em dois sites."},
+        {"id": "e2", "titulo": "E2 · Cinco intenções com dona", "min": "30 min",
+         "texto": "Escolha as 5 intenções mais importantes e, para cada uma, a página dona e o destino das concorrentes (linkar ou 301).",
+         "pronto": "o mapa tem 5 linhas, cada uma com uma única página dona, e as concorrentes têm destino decidido."}
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Teste o que aprendeu",
+      "sub": "A explicação aparece depois da sua resposta.",
+      "perguntas": [
+        {"p": "Você quer escrever \"o que é automação de atendimento\". Onde mora?",
+         "opcoes": ["No site de notícias, porque é assunto novo.", "No site principal, porque é evergreen.", "Nos dois, para garantir.", "Na página do evento."],
+         "certa": 1, "explica": "\"O que é\" vale daqui a um ano: é evergreen e mora no site principal. Nos dois, as páginas disputam a mesma busca.", "ref": "diagrama", "cert": true},
+        {"p": "Duas páginas suas respondem \"como gerenciar agentes de IA\". O que fazer?",
+         "opcoes": ["Deixar as duas: mais chances.", "Escolher uma dona; a outra linka para ela ou redireciona.", "Apagar as duas.", "Mudar só o título de uma."],
+         "certa": 1, "explica": "Duas páginas na mesma intenção perdem as duas. Uma dona por intenção; a outra vira apoio ou 301.", "ref": "passos"},
+        {"p": "O que é \"intenção de busca\"?",
+         "opcoes": ["A palavra exata digitada.", "O que a pessoa quer resolver, mesmo com palavras diferentes.", "O número de buscas por mês.", "A posição no Google."],
+         "certa": 1, "explica": "Palavras diferentes podem ter a mesma intenção. O mapa é por intenção, para não criar uma página por variação de palavra.", "ref": "passos"},
+        {"p": "Qual é o sinal mais claro de que falta território?",
+         "opcoes": ["O site tem poucas páginas.", "O mesmo assunto aparece no guia, no blog e numa FAQ, cada um com a sua resposta.", "O site não tem llms.txt.", "O logo é diferente em cada site."],
+         "certa": 1, "explica": "Respostas espalhadas para a mesma pergunta é canibalização. O território diz onde cada tipo mora.", "ref": "codigo"}
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para levar",
+      "itens": [
+        {"t": "Território", "texto": "Evergreen no principal, novidade no de notícias, agenda no de eventos."},
+        {"t": "Página dona", "texto": "Uma por intenção; as outras linkam ou redirecionam."},
+        {"t": "Antes de criar", "texto": "Procure a concorrente dentro de casa."}
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir além",
+      "links": [
+        {"t": "Método inemaSEO, etapa 5 (MIT)", "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md", "icone": "arquivo"},
+        {"t": "Google: URLs duplicadas e canônicas (inglês)", "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls", "icone": "lupa"},
+        {"t": "Google: redirecionamentos 301 (inglês)", "href": "https://developers.google.com/search/docs/crawling-indexing/301-redirects", "icone": "seta"}
+      ]
+    }
+  ]
+}
