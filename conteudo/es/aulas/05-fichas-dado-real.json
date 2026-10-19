@@ -132,12 +132,12 @@
         {
           "rot": "Ejecutar la traba (validar_extracao.mjs)",
           "icone": "terminal",
-          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = texto da página real do item\nnode tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\nnode tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\""
+          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = texto de la página real del ítem\nnode tools/validar_extracao.mjs fonte.txt \"Hidratación y pliegues\"\nnode tools/validar_extracao.mjs fonte.txt \"Curso con 12 clases sobre fermentación natural\""
         },
         {
           "rot": "fonte.txt usado en el ejemplo",
           "icone": "arquivo",
-          "conteudo": "Curso de pão de fermentação natural\nMódulo 1: O levain do zero\nMódulo 2: Hidratação e dobras\nMódulo 3: Forno doméstico\nCarga: 6 aulas de 20 minutos.\nPara quem já faz pão com fermento comum e quer migrar para o levain."
+          "conteudo": "Curso de pan de fermentación natural\nMódulo 1: El levain desde cero\nMódulo 2: Hidratación y pliegues\nMódulo 3: Horno doméstico\nCarga: 6 clases de 20 minutos.\nPara quienes ya hacen pan con levadura común y quieren pasarse al levain."
         }
       ],
       "saida": {
@@ -145,7 +145,7 @@
         "abas": [
           {
             "rot": "Salida capturada (19/10/2026)",
-            "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Aprenda a vender seus pães no Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"
+            "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hidratación y pliegues\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Curso con 12 clases sobre fermentación natural\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Aprende a vender tus panes en Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"
           },
           {
             "rot": "Cómo leerlo",

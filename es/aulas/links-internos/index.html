@@ -25,14 +25,14 @@ Escalera (2–3 antiguas que pasan a enlazar la nueva):
 - &lt;url antigua 1&gt;: frase &quot;&lt;texto del ancla&gt;&quot;
 - &lt;url antigua 2&gt;: frase &quot;&lt;texto del ancla&gt;&quot;
 - pilar: entrada en la lista del tema</pre></div><div class="cod"><div class="cod-cab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg><b>Índice plegado para un catálogo con búsqueda</b><button type="button" class="copiar" data-rot="Copiar" data-ok="Copiado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copiar</span></button></div><pre>&lt;details&gt;
-  &lt;summary&gt;Todos los itens do catálogo&lt;/summary&gt;
+  &lt;summary&gt;Todos los ítems del catálogo&lt;/summary&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;/cursos/levain-do-zero/&quot;&gt;Levain do zero&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;/cursos/forno-domestico/&quot;&gt;Forno doméstico&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/cursos/levain-do-zero/&quot;&gt;Levain desde cero&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/cursos/forno-domestico/&quot;&gt;Horno doméstico&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/details&gt;</pre></div><div class="cod"><div class="cod-cab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg><b>Comprobar con la radiografía</b><button type="button" class="copiar" data-rot="Copiar" data-ok="Copiado"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copiar</span></button></div><pre>tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/
-# linha &quot;links internos no HTML&quot; de cada página
-# e, na antiga, procure o endereço da nova:
+# línea &quot;links internos no HTML&quot; de cada página
+# y, en la antigua, busca la dirección de la nueva:
 curl -s https://www.seusite.com/antiga-1/ | grep -c &#x27;href=&quot;/pagina-nova/&quot;&#x27;</pre></div></div><div class="saida"><div class="saida-tabs" role="tablist"><button type="button" data-alvo="s0" aria-selected="true">Salida capturada (19/10/2026)</button><button type="button" data-alvo="s1" aria-selected="false">Errores comunes</button></div><div class="saida-corpo" data-painel="s0"><span class="selo real">Ejemplo del repositorio</span><pre>$ tools/auditoria.sh https://www.inema.club / /cursos/
 -- /  [200]
    links internos no HTML: 27

@@ -118,7 +118,7 @@
         {
           "rot": "Collapsed index for a catalog with search",
           "icone": "arquivo",
-          "conteudo": "<details>\n  <summary>Todos os itens do catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain do zero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Forno doméstico</a></li>\n  </ul>\n</details>"
+          "conteudo": "<details>\n  <summary>All catalog items</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain from scratch</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Home oven</a></li>\n  </ul>\n</details>"
         },
         {
           "rot": "Check with the X-ray",

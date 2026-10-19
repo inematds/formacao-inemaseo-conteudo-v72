@@ -118,12 +118,12 @@
         {
           "rot": "Índice plegado para un catálogo con búsqueda",
           "icone": "arquivo",
-          "conteudo": "<details>\n  <summary>Todos los itens do catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain do zero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Forno doméstico</a></li>\n  </ul>\n</details>"
+          "conteudo": "<details>\n  <summary>Todos los ítems del catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain desde cero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Horno doméstico</a></li>\n  </ul>\n</details>"
         },
         {
           "rot": "Comprobar con la radiografía",
           "icone": "terminal",
-          "conteudo": "tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/\n# linha \"links internos no HTML\" de cada página\n# e, na antiga, procure o endereço da nova:\ncurl -s https://www.seusite.com/antiga-1/ | grep -c 'href=\"/pagina-nova/\"'"
+          "conteudo": "tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/\n# línea \"links internos no HTML\" de cada página\n# y, en la antigua, busca la dirección de la nueva:\ncurl -s https://www.seusite.com/antiga-1/ | grep -c 'href=\"/pagina-nova/\"'"
         }
       ],
       "saida": {

@@ -142,7 +142,7 @@
         {
           "rot": "Request to group by intent (agent)",
           "icone": "chat",
-          "conteudo": "Below are approved (GO) keywords. Group them by search INTENT:\nwhat the person wants to solve, not the exact word.\nRules:\n- each group gets a short intent name and the main keyword;\n- the other keywords in the group become sections of the same page, never new pages;\n- do not invent keywords or numbers; use only the list;\n- if a keyword does not fit any group, leave it alone.\nAnswer in a table: grupo | palavra principal | variações.\n\nLISTA:\n<cole aqui>"
+          "conteudo": "Below are approved keywords (GO). Group them by search INTENT:\nwhat the person wants to solve, not the exact word.\nRules:\n- each group gets a short name for the intent and the main keyword;\n- the other keywords in the group become sections of the same page, never new pages;\n- do not invent keywords or numbers; use only the list;\n- if a keyword does not fit any group, leave it on its own.\nAnswer in a table: group | main keyword | variations.\n\nLIST:\n<paste here>"
         }
       ],
       "saida": {

@@ -117,7 +117,7 @@
         {
           "rot": "jsonld-newsarticle.json",
           "icone": "arquivo",
-          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"Título da notícia\",\n  \"description\": \"Resumo de uma frase.\",\n  \"articleBody\": \"Corpo com 150 a 250 palavras, escrito só com fatos da fonte.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"pt-BR\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"News headline\",\n  \"description\": \"One-sentence summary.\",\n  \"articleBody\": \"Body of 150 to 250 words, written only with facts from the source.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"en\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
         },
         {
           "rot": "prompt-texto-noticia.md (body against thin pages)",

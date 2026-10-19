@@ -132,12 +132,12 @@
         {
           "rot": "Run the check (validar_extracao.mjs)",
           "icone": "terminal",
-          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = texto da página real do item\nnode tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\nnode tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\""
+          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = text of the item's actual page\nnode tools/validar_extracao.mjs fonte.txt \"Hydration and folds\"\nnode tools/validar_extracao.mjs fonte.txt \"Natural-fermentation bread course with 12 lessons\""
         },
         {
           "rot": "fonte.txt used in the example",
           "icone": "arquivo",
-          "conteudo": "Curso de pão de fermentação natural\nMódulo 1: O levain do zero\nMódulo 2: Hidratação e dobras\nMódulo 3: Forno doméstico\nCarga: 6 aulas de 20 minutos.\nPara quem já faz pão com fermento comum e quer migrar para o levain."
+          "conteudo": "Natural-fermentation bread course\nModule 1: The levain from scratch\nModule 2: Hydration and folds\nModule 3: Home oven\nWorkload: 6 lessons of 20 minutes each.\nFor people who already bake bread with regular yeast and want to switch to levain."
         }
       ],
       "saida": {
@@ -145,7 +145,7 @@
         "abas": [
           {
             "rot": "Captured output (10/19/2026)",
-            "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Aprenda a vender seus pães no Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"
+            "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hydration and folds\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Natural-fermentation bread course with 12 lessons\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Learn how to sell your breads on Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"
           },
           {
             "rot": "How to read it",

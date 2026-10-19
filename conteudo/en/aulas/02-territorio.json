@@ -143,7 +143,7 @@
         {
           "rot": "Before creating a page: look for a competitor",
           "icone": "terminal",
-          "conteudo": "# no repositório do site, procure a palavra principal da nova página\ngrep -ril \"gestão de agentes\" conteudo/ paginas/ | head\n# no Google: site:seusite.com \"gestão de agentes\""
+          "conteudo": "# in the site's repository, search for the main keyword of the new page\ngrep -ril \"agent management\" conteudo/ paginas/ | head\n# on Google: site:seusite.com \"agent management\""
         }
       ],
       "saida": {

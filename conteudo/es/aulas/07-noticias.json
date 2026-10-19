@@ -117,17 +117,17 @@
         {
           "rot": "jsonld-newsarticle.json",
           "icone": "arquivo",
-          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"Título da notícia\",\n  \"description\": \"Resumo de uma frase.\",\n  \"articleBody\": \"Corpo com 150 a 250 palavras, escrito só com fatos da fonte.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"pt-BR\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"Título de la noticia\",\n  \"description\": \"Resumen de una frase.\",\n  \"articleBody\": \"Cuerpo de 150 a 250 palabras, escrito solo con hechos de la fuente.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"es\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
         },
         {
           "rot": "prompt-texto-noticia.md (cuerpo contra página delgada)",
           "icone": "chat",
-          "conteudo": "Tú escribes el cuerpo de una noticia para lectores no especialistas.\nNoticia: \"<título>\" — <resumen>\nEscribe 3 párrafos cortos (150 a 250 palabras en total):\n1) qué es; 2) para qué sirve / qué cambia para quien lo usa; 3) cómo empezar o qué observar.\nREGLAS: usa SOLO hechos del TEXTO DE LA FUENTE; no inventes números, fechas, precios, nombres ni promesas; frases\nsimples, sin clickbait, sin \"en este artículo\". Después traduce al inglés (en) y al español (es), manteniendo\nnombres de productos y marcas.\nResponde SOLO JSON: {\"pt\":[\"p1\",\"p2\",\"p3\"],\"en\":[\"p1\",\"p2\",\"p3\"],\"es\":[\"p1\",\"p2\",\"p3\"]}\n\nTEXTO DE LA FUENTE:\n<texto extraído da página original>"
+          "conteudo": "Tú escribes el cuerpo de una noticia para lectores no especialistas.\nNoticia: \"<título>\" — <resumen>\nEscribe 3 párrafos cortos (150 a 250 palabras en total):\n1) qué es; 2) para qué sirve / qué cambia para quien lo usa; 3) cómo empezar o qué observar.\nREGLAS: usa SOLO hechos del TEXTO DE LA FUENTE; no inventes números, fechas, precios, nombres ni promesas; frases\nsimples, sin clickbait, sin \"en este artículo\". Después traduce al inglés (en) y al español (es), manteniendo\nnombres de productos y marcas.\nResponde SOLO JSON: {\"pt\":[\"p1\",\"p2\",\"p3\"],\"en\":[\"p1\",\"p2\",\"p3\"],\"es\":[\"p1\",\"p2\",\"p3\"]}\n\nTEXTO DE LA FUENTE:\n<texto extraído de la página original>"
         },
         {
           "rot": "Regla del archivo (anotación)",
           "icone": "lista",
-          "conteudo": "Archivo de noticias de <site>\n- toda notícia publicada entra em <arquivo.json>; nada é removido\n- a home mostra as <N> mais recentes do arquivo\n- fonte com login ou pouco texto: página com noindex até ter corpo\n- validação do corpo: 110 a 320 palavras; todo número existe na fonte; 3 parágrafos por idioma"
+          "conteudo": "Archivo de noticias de <sitio>\n- toda noticia publicada entra en <archivo.json>; no se elimina nada\n- la home muestra las <N> más recientes del archivo\n- fuente con login o poco texto: página con noindex hasta tener cuerpo\n- validación del cuerpo: 110 a 320 palabras; todo número existe en la fuente; 3 párrafos por idioma"
         }
       ],
       "saida": {
