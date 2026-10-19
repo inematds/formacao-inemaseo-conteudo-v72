@@ -1,0 +1,255 @@
+{
+  "slug": "links-internos",
+  "num": 6,
+  "menu": "Enlaces",
+  "titulo": "Enlaces internos y la escalera de enlaces",
+  "titulo_curto": "Enlaces internos",
+  "minutos": 15,
+  "lead": "Para el buscador, una página sin enlaces es una página que casi no existe. Toda página nueva necesita un camino hasta ella, en el HTML que entrega el servidor, y enlaces que salgan de ella hacia la página pilar y sus hermanas. La escalera de enlaces es el hábito que lo garantiza: publicaste, edita dos o tres páginas antiguas para que apunten a la nueva.",
+  "objetivo": "conectar cada página nueva a la página pilar y a sus hermanas y editar 2–3 páginas antiguas para que apunten a ella, en el mismo commit.",
+  "competencias": [
+    "aplicar-regra-de-links",
+    "fazer-escada-de-links",
+    "conferir-links-no-html"
+  ],
+  "aprende": [
+    {
+      "t": "La regla fija de enlaces: home, página pilar, página"
+    },
+    {
+      "t": "La escalera de enlaces en cada publicación"
+    },
+    {
+      "t": "Ancla descriptiva en lugar de \"haz clic aquí\""
+    },
+    {
+      "t": "El caso del catálogo que perdió los enlaces"
+    }
+  ],
+  "hero_alt": "Escalera de madera de una casa antigua vista de lado, con puertas abiertas hacia las habitaciones de cada piso.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Quién enlaza a quién",
+      "sub": "Haz clic en cada nivel.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "lupa",
+          "titulo": "Home",
+          "sub": "→ pilares y catálogo",
+          "detalhe": "La home lleva a los pilares y al catálogo. Es la puerta de entrada que el rastreador visita más."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Página pilar",
+          "sub": "→ preguntas, ítems, pilares",
+          "forte": true,
+          "detalhe": "La página pilar enlaza todas las páginas de pregunta de su tema, algunos ítems curados del catálogo y las otras páginas pilar."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Página",
+          "sub": "→ pilar, hermanas, catálogo",
+          "detalhe": "Cada página de pregunta enlaza la página pilar (la madre), de 2 a 4 hermanas y 2 ítems del catálogo. Ancla descriptiva: \"cómo hacer masa madre\", nunca \"haz clic aquí\"."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Escalera",
+          "sub": "antiguas → nueva",
+          "forte": true,
+          "detalhe": "¿Publicaste una página nueva? Edita 2 o 3 páginas antiguas del mismo tema para que apunten a ella, en el mismo commit de la publicación."
+        }
+      ],
+      "legenda": "Los enlaces que cuentan son los que están en el HTML entregado por el servidor, sin depender de JavaScript."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Con cada página nueva",
+      "sub": "Haz clic en cada paso.",
+      "passos": [
+        {
+          "titulo": "Enlaces de salida",
+          "sub": "de la nueva",
+          "texto": [
+            "En el cuerpo, de 2 a 4 enlaces con ancla descriptiva. Al final, un bloque \"Lee también\" con la página pilar y las hermanas.",
+            "Todos los enlaces responden 200 (la radiografía del curso 1 lo comprueba)."
+          ]
+        },
+        {
+          "titulo": "Escalera",
+          "sub": "hacia la nueva",
+          "texto": [
+            "Elige 2 o 3 páginas antiguas del mismo tema donde el enlace tenga sentido para el lector, y agrega una frase con enlace.",
+            "La página pilar del tema siempre recibe el enlace a la nueva."
+          ]
+        },
+        {
+          "titulo": "Mismo commit",
+          "sub": "no lo dejes para después",
+          "texto": [
+            "La página nueva y las ediciones de la escalera suben juntas. \"Después la enlazo\" es como nacen las páginas huérfanas."
+          ]
+        },
+        {
+          "titulo": "Comprobar en el HTML",
+          "sub": "lo que ve el robot",
+          "texto": [
+            "Ejecuta la radiografía en la página nueva y en las antiguas: la línea \"links internos no HTML\" muestra si los enlaces están en el HTML del servidor.",
+            "Un catálogo con búsqueda en el navegador también necesita enlaces en el HTML: un índice plegado (details) lo resuelve sin cambiar el aspecto visual."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "El 30/09/2026 la página de cursos pasó a ser \"solo búsqueda\" y 310 fichas perdieron el único enlace interno renderizado en el servidor. La corrección fue un índice plegado, sin cambio visual."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Mapa de enlaces, bloque de la escalera y la comprobación",
+      "sub": "Anota el mapa antes de publicar.",
+      "blocos": [
+        {
+          "rot": "Mapa de enlaces de una página nueva",
+          "icone": "lista",
+          "conteudo": "Página nueva: <url>\nPilar (madre): <url>\nHermanas (2–4): <url> · <url>\nCatálogo (2): <url> · <url>\nEscalera (2–3 antiguas que pasan a enlazar la nueva):\n- <url antigua 1>: frase \"<texto del ancla>\"\n- <url antigua 2>: frase \"<texto del ancla>\"\n- pilar: entrada en la lista del tema"
+        },
+        {
+          "rot": "Índice plegado para un catálogo con búsqueda",
+          "icone": "arquivo",
+          "conteudo": "<details>\n  <summary>Todos los itens do catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain do zero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Forno doméstico</a></li>\n  </ul>\n</details>"
+        },
+        {
+          "rot": "Comprobar con la radiografía",
+          "icone": "terminal",
+          "conteudo": "tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/\n# linha \"links internos no HTML\" de cada página\n# e, na antiga, procure o endereço da nova:\ncurl -s https://www.seusite.com/antiga-1/ | grep -c 'href=\"/pagina-nova/\"'"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Salida capturada (19/10/2026)",
+            "html": "<pre>$ tools/auditoria.sh https://www.inema.club / /cursos/\n-- /  [200]\n   links internos no HTML: 27\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   links internos no HTML: 335</pre><p>Con el índice plegado, la página de cursos entrega los enlaces en el HTML del servidor, aunque sea una búsqueda en el navegador.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>\"Haz clic aquí\"</b>: el ancla no dice de qué trata la página.</li><li><b>Enlaces solo por JavaScript</b>: el rastreador puede no verlos.</li><li><b>Bloque \"otros sitios de la red\"</b> en todas las páginas: el enlace entre sitios es contextual y raro.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: enlaza tu página",
+      "sub": "Usa la página de pregunta de la clase 4.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Mapa de enlaces",
+          "min": "20 min",
+          "texto": "Completa el mapa de enlaces de tu página nueva: pilar, hermanas, catálogo y las 2 o 3 antiguas de la escalera.",
+          "pronto": "el mapa tiene pilar, al menos 2 hermanas y 2 antiguas elegidas, cada una con la frase del ancla escrita."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Escalera publicada",
+          "min": "30 min",
+          "texto": "Publica la página nueva y las ediciones de la escalera en el mismo commit. Ejecuta la radiografía y el grep en las antiguas.",
+          "pronto": "el grep encuentra la dirección de la nueva en cada página antigua de la escalera, y la radiografía muestra enlaces internos en el HTML de la nueva."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Qué es la escalera de enlaces?",
+          "opcoes": [
+            "Comprar enlaces de otros sitios.",
+            "Editar 2 o 3 páginas antiguas del mismo tema para que apunten a la nueva, en el mismo commit.",
+            "Poner todos los enlaces en el pie de página.",
+            "Una herramienta de pago."
+          ],
+          "certa": 1,
+          "explica": "Es el hábito que evita que la página nueva nazca huérfana.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "El catálogo se convirtió en una búsqueda en el navegador y las fichas desaparecieron del índice. ¿Causa probable?",
+          "opcoes": [
+            "Falta de FAQ.",
+            "Los enlaces de las fichas ya no están en el HTML entregado por el servidor.",
+            "Título largo.",
+            "Exceso de imágenes."
+          ],
+          "certa": 1,
+          "explica": "Fue el caso de INEMA: 310 fichas perdieron el único enlace renderizado en el servidor. Un índice plegado lo resolvió.",
+          "ref": "passos"
+        },
+        {
+          "p": "¿Qué ancla es mejor?",
+          "opcoes": [
+            "\"haz clic aquí\"",
+            "\"saber más\"",
+            "\"cómo hacer masa madre en casa\"",
+            "\"enlace\""
+          ],
+          "certa": 2,
+          "explica": "Un ancla descriptiva le dice al lector y al buscador de qué trata la página de destino.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "¿A dónde debe enlazar la página de pregunta?",
+          "opcoes": [
+            "Solo a la home.",
+            "Pilar, 2 a 4 hermanas y 2 ítems del catálogo.",
+            "A todos los sitios de la red.",
+            "A ninguna, para no perder fuerza."
+          ],
+          "certa": 1,
+          "explica": "Es la regla fija de la etapa 7 del método.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevar",
+      "itens": [
+        {
+          "t": "Regla fija",
+          "texto": "Home → pilares; pilar → preguntas; página → pilar, hermanas, catálogo."
+        },
+        {
+          "t": "Escalera",
+          "texto": "2 o 3 antiguas apuntan a la nueva, en el mismo commit."
+        },
+        {
+          "t": "En el HTML",
+          "texto": "Revísalo en la radiografía: un enlace que solo existe en JavaScript puede no contar."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Google: enlaces rastreables y anclas (inglés)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+          "icone": "lupa"
+        },
+        {
+          "t": "auditoria.sh (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh",
+          "icone": "terminal"
+        }
+      ]
+    }
+  ]
+}

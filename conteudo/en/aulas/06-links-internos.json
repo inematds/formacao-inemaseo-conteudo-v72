@@ -1,0 +1,255 @@
+{
+  "slug": "links-internos",
+  "num": 6,
+  "menu": "Links",
+  "titulo": "Internal links and the link ladder",
+  "titulo_curto": "Internal links",
+  "minutos": 15,
+  "lead": "To a search engine, a page with no links is a page that barely exists. Every new page needs a path to it, in the HTML the server delivers, and links going out of it to the pillar page and its sibling pages. The link ladder is the habit that guarantees this: when you publish, edit two or three older pages to point to the new one.",
+  "objetivo": "link each new page to the pillar page and its siblings, and edit 2–3 older pages to point to it, in the same commit.",
+  "competencias": [
+    "aplicar-regra-de-links",
+    "fazer-escada-de-links",
+    "conferir-links-no-html"
+  ],
+  "aprende": [
+    {
+      "t": "The fixed link rule: home, pillar page, page"
+    },
+    {
+      "t": "The link ladder at every publish"
+    },
+    {
+      "t": "Descriptive anchor text instead of \"click here\""
+    },
+    {
+      "t": "The case of the catalog that lost its links"
+    }
+  ],
+  "hero_alt": "Wooden staircase of an old house seen from the side, with open doors to the rooms on each floor.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Who links to whom",
+      "sub": "Click each step.",
+      "estilo": "escada",
+      "nos": [
+        {
+          "icone": "lupa",
+          "titulo": "Home",
+          "sub": "→ pillar pages and catalog",
+          "detalhe": "The home page leads to the pillar pages and the catalog. It's the front door the crawler visits most."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Pillar page",
+          "sub": "→ questions, items, pillar pages",
+          "forte": true,
+          "detalhe": "The pillar page links to all the question pages on its topic, a few curated catalog items, and the other pillar pages."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Page",
+          "sub": "→ pillar page, siblings, catalog",
+          "detalhe": "Each question page links to the pillar page (parent), 2 to 4 siblings, and 2 catalog items. Descriptive anchor: \"how to make levain\", never \"click here\"."
+        },
+        {
+          "icone": "seta",
+          "titulo": "Ladder",
+          "sub": "old → new",
+          "forte": true,
+          "detalhe": "Published a new page? Edit 2 or 3 old pages on the same topic to point to it, in the same commit as the publication."
+        }
+      ],
+      "legenda": "The links that count are the ones in the HTML delivered by the server, without depending on JavaScript."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "For every new page",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Outgoing links",
+          "sub": "from the new page",
+          "texto": [
+            "In the body, 2 to 4 links with descriptive anchors. At the end, a \"Read also\" block with the pillar page and the siblings.",
+            "All links return 200 (the X-ray from course 1 checks this)."
+          ]
+        },
+        {
+          "titulo": "Ladder",
+          "sub": "to the new page",
+          "texto": [
+            "Pick 2 or 3 old pages on the same topic where the link makes sense for the reader, and add one sentence with a link.",
+            "The topic's pillar page always gets the link to the new page."
+          ]
+        },
+        {
+          "titulo": "Same commit",
+          "sub": "don't leave it for later",
+          "texto": [
+            "The new page and the ladder edits go up together. \"I'll link it later\" is how orphan pages are born."
+          ]
+        },
+        {
+          "titulo": "Check the HTML",
+          "sub": "what the robot sees",
+          "texto": [
+            "Run the X-ray on the new page and the old ones: the \"internal links in HTML\" line shows whether the links are in the server's HTML.",
+            "A catalog with in-browser search also needs links in the HTML: a collapsed index (details) solves it without changing the look."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On 09/30/2026, the courses page became \"search only\" and 310 listing pages lost the only internal link rendered on the server. The fix was a collapsed index, with no visual change."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "Link map, ladder block, and the check",
+      "sub": "Write down the map before you publish.",
+      "blocos": [
+        {
+          "rot": "Link map for a new page",
+          "icone": "lista",
+          "conteudo": "New page: <url>\nPillar page (parent): <url>\nSiblings (2–4): <url> · <url>\nCatalog (2): <url> · <url>\nLadder (2–3 old pages that will now link to the new one):\n- <old url 1>: sentence \"<anchor text>\"\n- <old url 2>: sentence \"<anchor text>\"\n- pillar page: entry in the topic list"
+        },
+        {
+          "rot": "Collapsed index for a catalog with search",
+          "icone": "arquivo",
+          "conteudo": "<details>\n  <summary>Todos os itens do catálogo</summary>\n  <ul>\n    <li><a href=\"/cursos/levain-do-zero/\">Levain do zero</a></li>\n    <li><a href=\"/cursos/forno-domestico/\">Forno doméstico</a></li>\n  </ul>\n</details>"
+        },
+        {
+          "rot": "Check with the X-ray",
+          "icone": "terminal",
+          "conteudo": "tools/auditoria.sh https://www.seusite.com /pagina-nova/ /antiga-1/ /antiga-2/\n# \"links internos no HTML\" line for each page\n# and, on the old one, look for the address of the new one:\ncurl -s https://www.seusite.com/antiga-1/ | grep -c 'href=\"/pagina-nova/\"'"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Captured output (10/19/2026)",
+            "html": "<pre>$ tools/auditoria.sh https://www.inema.club / /cursos/\n-- /  [200]\n   links internos no HTML: 27\n-- /cursos/  [200]\n   title:     Cursos de inteligência artificial, agentes e automação | INEMA.club\n   links internos no HTML: 335</pre><p>With the collapsed index, the courses page delivers the links in the server's HTML, even though it's a search in the browser.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>\"Click here\"</b>: the anchor doesn't say what the page is about.</li><li><b>Links only through JavaScript</b>: the crawler may not see them.</li><li><b>\"Other sites in the network\" block</b> on every page: a link between sites is contextual and rare.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: link your page",
+      "sub": "Use the question page from lesson 4.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Link map",
+          "min": "20 min",
+          "texto": "Fill in the link map for your new page: pillar page, siblings, catalog, and the 2 or 3 old pages for the ladder.",
+          "pronto": "the map has a pillar page, at least 2 siblings, and 2 chosen old pages, each with the anchor sentence written out."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Ladder published",
+          "min": "30 min",
+          "texto": "Publish the new page and the ladder edits in the same commit. Run the X-ray and the grep on the old pages.",
+          "pronto": "the grep finds the new page's address in each old page of the ladder, and the X-ray shows internal links in the HTML of the new page."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "What is the link ladder?",
+          "opcoes": [
+            "Buying links from other sites.",
+            "Editing 2 or 3 older pages on the same topic to point to the new one, in the same commit.",
+            "Putting all the links in the footer.",
+            "A paid tool."
+          ],
+          "certa": 1,
+          "explica": "It's the habit that keeps the new page from being born an orphan.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "The catalog turned into a search in the browser and the listing pages vanished from the index. Likely cause?",
+          "opcoes": [
+            "No FAQ.",
+            "The links to the listing pages are no longer in the HTML delivered by the server.",
+            "A long title.",
+            "Too many images."
+          ],
+          "certa": 1,
+          "explica": "That was the INEMA case: 310 listing pages lost their only server-rendered link. A collapsed index fixed it.",
+          "ref": "passos"
+        },
+        {
+          "p": "Which anchor is best?",
+          "opcoes": [
+            "\"click here\"",
+            "\"learn more\"",
+            "\"how to make sourdough at home\"",
+            "\"link\""
+          ],
+          "certa": 2,
+          "explica": "A descriptive anchor tells both the reader and the search engine what the destination page is about.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Where should the question page link to?",
+          "opcoes": [
+            "Only to the home page.",
+            "The pillar page, 2 to 4 sibling pages, and 2 catalog items.",
+            "To every site in the network.",
+            "To none, so it doesn't lose strength."
+          ],
+          "certa": 1,
+          "explica": "It's the fixed rule of step 7 of the method.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Fixed rule",
+          "texto": "Home → pillar pages; pillar page → questions; page → pillar page, siblings, catalog."
+        },
+        {
+          "t": "Ladder",
+          "texto": "2 or 3 older pages point to the new one, in the same commit."
+        },
+        {
+          "t": "In the HTML",
+          "texto": "Check it in the X-ray: a link that only exists in JavaScript may not count."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: crawlable links and anchors (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+          "icone": "lupa"
+        },
+        {
+          "t": "auditoria.sh (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/auditoria.sh",
+          "icone": "terminal"
+        }
+      ]
+    }
+  ]
+}

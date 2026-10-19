@@ -1,0 +1,508 @@
+{
+  "slug": "sem-spam",
+  "num": 8,
+  "menu": "No spam",
+  "titulo": "Scaled content and spam: what not to do",
+  "titulo_curto": "What not to do",
+  "minutos": 20,
+  "lead": "With AI, publishing a thousand pages costs almost nothing. That's exactly why Google targets scaled content: many pages made to manipulate rankings, \"no matter how they are created.\" This lesson shows the shortcuts going around, why each one is a risk, and the right path: the 16-item checklist and a cadence that fits within human review.",
+  "objetivo": "recognize scaled content and link schemes, and run every page through the 16-item checklist before publishing.",
+  "competencias": [
+    "reconhecer-conteudo-escalado",
+    "recusar-esquema-de-links",
+    "aplicar-checklist-16",
+    "planejar-cadencia"
+  ],
+  "aprende": [
+    {
+      "t": "The shortcuts going around and why each one is a risk"
+    },
+    {
+      "t": "What Google's spam policy says in 2026"
+    },
+    {
+      "t": "The 16-item checklist before publishing"
+    },
+    {
+      "t": "Talk with someone who wants volume and build your own plan"
+    }
+  ],
+  "hero_alt": "A huge pile of identical sheets next to a single well-bound book on the table.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Shortcut or path",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "x",
+          "titulo": "Volume",
+          "sub": "thousand articles, one per keyword",
+          "itens": [
+            {
+              "icone": "robo",
+              "t": "agents publishing nonstop"
+            },
+            {
+              "icone": "camadas",
+              "t": "5 variations per keyword"
+            }
+          ],
+          "detalhe": "Scaled content (scaled content abuse): lots of pages with no value, made to manipulate rankings. It matches the real case from lesson 5: the batch of thin pages did not get indexed."
+        },
+        {
+          "icone": "x",
+          "titulo": "Link scheme",
+          "sub": "network of cross-linked sites",
+          "detalhe": "Several of your sites linking to each other, \"20 links per post.\" That is link spam, and a manual action can take down all the domains at once."
+        },
+        {
+          "icone": "x",
+          "titulo": "Disguise",
+          "sub": "\"humanize\" and rewrite the top 10",
+          "detalhe": "Running text through a \"humanizer to beat the detector\" aims at the wrong metric: Google has no policy about detectors; it evaluates value. Paraphrasing at scale to fool people only produces more pages with no value. Scraping the top 10 and rewriting it is derivative content."
+        },
+        {
+          "icone": "x",
+          "titulo": "Index shortcut",
+          "sub": "and someone else's domain",
+          "detalhe": "Google's Indexing API for a regular post (it only applies to job postings and livestreams), a paid indexer, and parasite SEO on Reddit or LinkedIn to \"rank in 24 hours\" (site reputation abuse)."
+        },
+        {
+          "icone": "check",
+          "titulo": "Path",
+          "sub": "checklist + cadence",
+          "forte": true,
+          "detalhe": "Each page with first-hand data, run through the 16 items, reviewed by a human, at most 3 new ones per week in the same cluster. Google evaluates value, not tools: AI to research and organize what is yours is allowed."
+        }
+      ],
+      "legenda": "The same spam policies have applied to Google's AI answers since 05/08/2026."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "What the policy says, in four sentences",
+      "sub": "Click each one.",
+      "passos": [
+        {
+          "titulo": "It's not the tool",
+          "sub": "it's the value",
+          "texto": [
+            "Using AI is not prohibited. Google's guidance on AI-generated content accepts AI for researching and structuring original content that a person writes or validates."
+          ]
+        },
+        {
+          "titulo": "Scale without value",
+          "sub": "since March 2024",
+          "texto": [
+            "The scaled content policy lists: lots of generated pages with no value, scraping results, stitching together content from other pages without adding anything, translating or swapping synonyms to disguise it, and creating several sites to hide the scale."
+          ]
+        },
+        {
+          "titulo": "It applies to AI",
+          "sub": "08/05/2026",
+          "texto": [
+            "Google clarified that the spam policies also apply to generative AI answers. And, since 04/13/2026, spam reports can be used for manual action."
+          ]
+        },
+        {
+          "titulo": "Unrealistic promise",
+          "sub": "position 1 in hours",
+          "texto": [
+            "\"First place in 60 seconds\" is usually a keyword with no competition, cherry-picked proof, and an unstable result. Don't promise it, don't buy it."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The 16-item checklist",
+      "sub": "From inemaSEO, adapted to the 2026 yardstick on items 1 and 7. Run each page through it before publishing.",
+      "blocos": [
+        {
+          "rot": "CHECKLIST.md (adapted)",
+          "icone": "check",
+          "conteudo": "| # | Check | Blocks? |\n|---|---|---|\n| 1 | Direct answer at the start, no \"in this article we will…\" (clarity for the reader) | yes |\n| 2 | ≥ 1 verifiable piece of first-hand data, with a link to the evidence | yes |\n| 3 | No number or quote without a source; nothing made up by the AI | yes |\n| 4 | Does not cannibalize: the main keyword does not belong to another page of yours | yes |\n| 5 | Title 50–60 characters with the keyword; description 140–155; only one H1 | yes |\n| 6 | Internal links: pillar page + ≥ 2 sibling pages + ≥ 2 catalog items; all 200 | yes |\n| 7 | Valid JSON-LD that matches the visible text; FAQ only with ≥ 3 real questions, without expecting a rich result (ended on 05/07/2026) | yes |\n| 8 | Real update date | yes |\n| 9 | Human read: has an opinion and \"what went wrong\"; sounds like the author | yes |\n| 10 | Swap test: swapped the keyword and the paragraph still holds? Rewrite it | yes |\n| 11 | Cadence: ≤ 3 new pages per week in the same cluster | yes |\n| 12 | Translation only with reciprocal hreflang | yes |\n| 13 | Author block with a link to the author page (sameAs) | yes |\n| 14 | Link ladder done: 2–3 older pages pointing to the new one, in the same commit | yes |\n| 15 | Post-publication: URL 200, title, canonical and JSON-LD present; search engines notified | yes |\n| 16 | Own images and diagrams when they help (not stock images) | no |"
+        },
+        {
+          "rot": "Cadence plan (4 weeks)",
+          "icone": "calendario",
+          "conteudo": "Cluster: <name>\nWeek 1: <page> · <page>          (≤ 3)\nWeek 2: <page> · ladder from the previous ones\nWeek 3: <page> · <page>\nWeek 4: review: what got indexed? (course 3)\nHuman review: <who> · <10–20 min per page>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Why adapt 1 and 7",
+            "html": "<p>The original checklist asks for an answer in the first 60 words \"in the format AI search engines cite\" and FAQ markup for the rich result. By the 2026 yardstick: a short answer is clarity, with no source backing it up as an AI factor, and the FAQ rich result stopped appearing on 05/07/2026.</p>"
+          },
+          {
+            "rot": "Warning sign",
+            "html": "<p>From the method's Plan B: <b>a general drop after publishing a lot</b> is a sign of scaled content. The response is to stop, audit with the checklist, merge or remove the weak pages, and lower the cadence.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "simconversa",
+      "titulo": "Simulated conversation: the business partner wants to publish 500 AI articles",
+      "sub": "Fictional conversation for practice. Pick the answer you would give; the comment appears right after.",
+      "personagem": {
+        "nome": "Coffee roastery partner",
+        "papel": "online coffee store · wants to grow fast"
+      },
+      "inicio": "abre",
+      "falas": {
+        "abre": {
+          "cliente": "I found a tool that generates 500 AI articles a month, one for each coffee keyword. In three months we'll dominate Google. Should we turn it on?",
+          "opcoes": [
+            {
+              "t": "Let's do it. The more pages, the better the chance of showing up.",
+              "vai": "fim-queda",
+              "nota": 0,
+              "comenta": "That's the definition of scaled content: lots of pages with no value, made to manipulate rankings. Volume isn't a chance; it's a risk."
+            },
+            {
+              "t": "First: what would each of these articles have that only our roastery knows?",
+              "vai": "dado",
+              "nota": 2,
+              "comenta": "Right question. What counts is non-commodity content: your own data and experience."
+            },
+            {
+              "t": "We can't. Google bans text written by AI.",
+              "vai": "mito",
+              "nota": 1,
+              "comenta": "You stopped the mistake, but with a false argument. Google judges value, not the tool."
+            }
+          ]
+        },
+        "mito": {
+          "cliente": "It bans it? But everyone uses AI. So is everyone being punished?",
+          "opcoes": [
+            {
+              "t": "Let me correct myself: Google doesn't punish the tool, it punishes pages with no value made at scale. The question is what each article would have that's ours.",
+              "vai": "dado",
+              "nota": 1,
+              "comenta": "Back on the right track, with one extra detour."
+            },
+            {
+              "t": "Right, so it's better not to use AI for anything.",
+              "vai": "fim-parado",
+              "nota": 0,
+              "comenta": "That's overcorrecting in the other direction: using AI to research and organize what's yours is allowed and saves time."
+            }
+          ]
+        },
+        "dado": {
+          "cliente": "Ours? The tool takes the top 10 on Google and writes a text better than all of them.",
+          "opcoes": [
+            {
+              "t": "That's derivative content. Let's use AI to organize what's ours: the roast sheets, the tasting notes, the customers' questions.",
+              "vai": "humaniza",
+              "nota": 2,
+              "comenta": "You swapped rewriting other people's work for first-hand data, which is the criterion that weighs most in the lesson 3 score."
+            },
+            {
+              "t": "If it's well written, it'll pass.",
+              "vai": "fim-queda",
+              "nota": 0,
+              "comenta": "Scraping and rewriting the top 10 is cited in the policy as gathering content without adding value."
+            },
+            {
+              "t": "Okay, but lower it to 100 a month.",
+              "vai": "humaniza",
+              "nota": 1,
+              "comenta": "Less volume reduces the damage, but 100 pages without first-hand data are still scale without value."
+            }
+          ]
+        },
+        "humaniza": {
+          "cliente": "What if we run the texts through a humanizer, so no AI detector catches them?",
+          "opcoes": [
+            {
+              "t": "Google doesn't use a detector; it evaluates whether the page helps. Humanizing at scale is paraphrasing to deceive: it just makes more pages without value.",
+              "vai": "plano",
+              "nota": 2,
+              "comenta": "Correct, and without inventing a penalty: the real risk is scale without value, not the detector."
+            },
+            {
+              "t": "Nice, then it's guaranteed.",
+              "vai": "fim-queda",
+              "nota": 0,
+              "comenta": "You aimed at the wrong metric. The page is still without value, now just disguised."
+            }
+          ]
+        },
+        "plano": {
+          "cliente": "Okay, you've convinced me. So what's the plan?",
+          "opcoes": [
+            {
+              "t": "Up to 3 pages a week per topic, each with a piece of our own data, going through the 16-item checklist and a 15-minute review from you.",
+              "vai": "fim-bom",
+              "nota": 2,
+              "comenta": "A cadence that fits human review, with first-hand data and a quality gate."
+            },
+            {
+              "t": "We'll build 5 coffee sites with cross-links, to spread the risk.",
+              "vai": "fim-rede",
+              "nota": 0,
+              "comenta": "A network of sites with cross-links is a link scheme. Instead of spreading the risk, it puts all the domains under the same manual action."
+            }
+          ]
+        },
+        "fim-queda": {
+          "fim": true,
+          "titulo": "Volume turned into a drop",
+          "texto": "Hundreds of similar pages went live at once. Most weren't even indexed, and the whole site came to be seen as scaled content. Now the work is to remove and merge pages before growing again."
+        },
+        "fim-parado": {
+          "fim": true,
+          "titulo": "Fear instead of method",
+          "texto": "The store gave up on AI and on content too. The problem was never the tool: it was publishing without first-hand data. With the checklist, AI would have helped."
+        },
+        "fim-rede": {
+          "fim": true,
+          "titulo": "Five sites, one problem",
+          "texto": "The network of cross-linked sites drew attention as a link scheme. One manual action can hit all the domains at once."
+        },
+        "fim-bom": {
+          "fim": true,
+          "titulo": "Fewer pages, all ours",
+          "texto": "Three pages a week, each with a roast sheet or a house tasting note, reviewed and connected by the link ladder. It grows more slowly and doesn't have to be undone later."
+        }
+      },
+      "licao": "Someone who wants volume wants results. Answer with the first-hand data question, take apart the myths without inventing a penalty, and deliver a cadence that fits human review."
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your gate",
+      "sub": "Use the question page from lesson 4.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Checklist applied",
+          "min": "30 min",
+          "texto": "Run your page through the 16 items and note yes or no on each one. Fix the ones that block.",
+          "pronto": "the 15 blocking items are marked \"yes\", with what was fixed noted next to them."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · 4-week cadence",
+          "min": "20 min",
+          "texto": "Build the 4-week plan for a cluster from lesson 3, with at most 3 new pages per week and the name of who reviews.",
+          "pronto": "the plan has all 4 weeks, none goes over 3 pages in the cluster, and week 4 is for review."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "What does the scaled content policy target?",
+          "opcoes": [
+            "All text made with AI.",
+            "Lots of pages with no value, made to manipulate rankings, no matter how they were created.",
+            "Sites with more than 100 pages.",
+            "Pages without images."
+          ],
+          "certa": 1,
+          "explica": "The criterion is value, not tools. Using AI to organize your own content is allowed.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "What does \"humanizing the text so the detector doesn't catch it\" fix?",
+          "opcoes": [
+            "It avoids a Google penalty.",
+            "Nothing: Google checks whether the page helps, and paraphrasing at scale only creates more pages with no value.",
+            "It improves your ranking.",
+            "It guarantees indexing."
+          ],
+          "certa": 1,
+          "explica": "Google has no policy about detectors. The risk is scale without value, and a disguise doesn't change that.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What is Google's Indexing API actually for?",
+          "opcoes": [
+            "For any new post.",
+            "Only for job postings (JobPosting) and live streams (BroadcastEvent).",
+            "For sites that use AI.",
+            "For news."
+          ],
+          "certa": 1,
+          "explica": "Outside those two types, it violates the terms. The path is sitemap, Search Console, and IndexNow (course 1).",
+          "ref": "diagrama"
+        },
+        {
+          "p": "Your site dropped after you published a lot in a short time. First step?",
+          "opcoes": [
+            "Publish more to make up for it.",
+            "Stop, audit with the checklist, merge or remove the weak pages, and lower your cadence.",
+            "Buy links.",
+            "Switch domains."
+          ],
+          "certa": 1,
+          "explica": "It is the method's Plan B for the scaled content signal.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "mapa",
+      "titulo": "The content map",
+      "sub": "Four steps and the exercises for each. Tap an exercise to see its \"done when\".",
+      "degraus": [
+        {
+          "aula": "entidade",
+          "icone": "marca",
+          "quando": "Week 1",
+          "titulo": "Who",
+          "sub": "entity and name collision",
+          "saida": "Person and Organization with a fixed @id on every page.",
+          "passo": "Before you write in the brand's name, say who it is. The collision test becomes the baseline for course 4."
+        },
+        {
+          "aula": "palavra-chave",
+          "icone": "alvo",
+          "quando": "Weeks 1 and 2",
+          "titulo": "Content plan",
+          "sub": "territory and score (lessons 2 and 3)",
+          "saida": "Map of owner pages and 10 scored terms.",
+          "passo": "Requires the entity. The territory says where each page lives; the score says which ones are worth it."
+        },
+        {
+          "aula": "pilar-perguntas",
+          "icone": "texto",
+          "quando": "Weeks 2 to 4",
+          "titulo": "Pages",
+          "sub": "pillar page, listing pages, links, news (lessons 4 to 7)",
+          "saida": "First question page, listing pages with the check, link ladder built.",
+          "passo": "Requires the content plan. These are lessons 4 to 7; the map shows the exercises from lesson 4, and the plan below lists all of them."
+        },
+        {
+          "aula": "sem-spam",
+          "icone": "escudo",
+          "quando": "Every week",
+          "titulo": "Guard",
+          "sub": "checklist and cadence",
+          "saida": "Checklist of 16 applied and 4-week plan.",
+          "passo": "This applies to every page from now on: nothing goes live without passing all 16 items."
+        }
+      ],
+      "resultado": {
+        "titulo": "By the end of the course",
+        "texto": "A declared entity, a content plan validated for free, pages with first-hand data tied together by links, and a gate against shortcuts.",
+        "total": "16 exercises"
+      },
+      "rolagem_fim": {
+        "titulo": "All the content",
+        "texto": "Who, content plan, pages and guard. Only move up a step when the \"done when\" of the previous one is true."
+      },
+      "legenda": "After the content comes course 3: measuring what worked, separating your own brand."
+    },
+    {
+      "tipo": "gerador",
+      "titulo": "Generate your plan with dates",
+      "sub": "Pick a start date and how much time you have per week.",
+      "curso": "inemaSEO 2 · Content",
+      "horas_padrao": 3,
+      "degraus": [
+        {
+          "titulo": "Lesson 1 · Entity",
+          "aula": "entidade"
+        },
+        {
+          "titulo": "Lesson 2 · Territory and owner page",
+          "aula": "territorio"
+        },
+        {
+          "titulo": "Lesson 3 · Validate a keyword",
+          "aula": "palavra-chave"
+        },
+        {
+          "titulo": "Lesson 4 · Pillar page and questions",
+          "aula": "pilar-perguntas"
+        },
+        {
+          "titulo": "Lesson 5 · Listing pages with real data",
+          "aula": "fichas-dado-real"
+        },
+        {
+          "titulo": "Lesson 6 · Internal links",
+          "aula": "links-internos"
+        },
+        {
+          "titulo": "Lesson 7 · News with its own page",
+          "aula": "noticias"
+        },
+        {
+          "titulo": "Lesson 8 · What not to do",
+          "aula": "sem-spam"
+        }
+      ],
+      "txt": {
+        "titulo": "Plan — inemaSEO 2 · Content",
+        "inicio": "Start",
+        "ritmo": "Pace",
+        "termino": "Expected finish",
+        "ate": "by",
+        "pronto": "done when",
+        "semanas": "weeks",
+        "travou": "## What got stuck and what I decided",
+        "h": "h per week",
+        "exs": "exercises"
+      }
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Value, not tools",
+          "texto": "AI to organize what is yours; never to fabricate volume."
+        },
+        {
+          "t": "Shortcuts are a risk",
+          "texto": "Site networks, a thousand articles, disguise, forced indexing and someone else's domain."
+        },
+        {
+          "t": "Gate",
+          "texto": "16 items and at most 3 new pages per week in the same cluster."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "Spam policies also apply to Google's AI answers (05/08/2026)."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: spam policies (English)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        },
+        {
+          "t": "Google: AI-generated content (English)",
+          "href": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+          "icone": "robo"
+        },
+        {
+          "t": "inemaSEO quality checklist (MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md",
+          "icone": "check"
+        },
+        {
+          "t": "inemaSEO systems: open tools",
+          "href": "https://github.com/inematds/inemaseo-sistemas",
+          "icone": "terminal"
+        }
+      ]
+    }
+  ]
+}

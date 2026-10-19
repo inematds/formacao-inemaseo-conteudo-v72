@@ -1,0 +1,275 @@
+{
+  "slug": "pilar-perguntas",
+  "num": 4,
+  "menu": "Página pilar",
+  "titulo": "Página pilar y páginas de pregunta con respuesta directa",
+  "titulo_curto": "Página pilar y preguntas",
+  "minutos": 18,
+  "lead": "Una página pilar es la página larga que cubre un tema central de tu negocio. A su alrededor, las páginas de pregunta responden una duda cada una, empezando por la respuesta. No es un truco para IA: es respeto por quien llegó con una pregunta. Y la sección de preguntas al final sigue siendo útil para el lector, incluso sin la vitrina que Google quitó en 2026.",
+  "objetivo": "escribir una página de pregunta con respuesta directa arriba, secciones en forma de pregunta y FAQ visible, sin prometer rich result.",
+  "competencias": [
+    "planificar-pilar",
+    "escribir-respuesta-directa",
+    "usar-faq-sin-promesa",
+    "aplicar-prueba-del-cambio"
+  ],
+  "aprende": [
+    {
+      "t": "La diferencia entre página pilar y página de pregunta"
+    },
+    {
+      "t": "El esqueleto de una página de pregunta"
+    },
+    {
+      "t": "FAQ en 2026: útil para el lector, sin vitrina"
+    },
+    {
+      "t": "La prueba del cambio contra el texto genérico"
+    }
+  ],
+  "hero_alt": "Biblioteca clara con un gran libro de referencia abierto y tarjetas de pregunta prendidas en un tablero de corcho alrededor.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Una página pilar al centro, preguntas alrededor",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "camadas",
+          "titulo": "Página pilar",
+          "sub": "tema central, texto largo",
+          "forte": true,
+          "detalhe": "Una página por tema central (2 o 3 en todo el sitio), larga: el método inemaSEO habla de 2.500 a 4.000 palabras. Enlaza a todas las páginas de pregunta del tema y a las otras páginas pilar."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Páginas de pregunta",
+          "sub": "una duda cada una",
+          "detalhe": "Cada una responde una intención de tu clúster (clase 3). Corta lo bastante para resolver, larga lo bastante para traer tu dato propio."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Respuesta directa",
+          "sub": "2 a 4 frases arriba",
+          "forte": true,
+          "detalhe": "La página empieza respondiendo, sin \"en este artículo vamos a\". Quien llegó por la pregunta lee la respuesta en segundos y decide si quiere el detalle."
+        },
+        {
+          "icone": "lista",
+          "titulo": "Secciones en pregunta",
+          "sub": "títulos que haría el lector",
+          "detalhe": "Los títulos de sección (h2) son las siguientes preguntas del lector: \"¿cuánto tiempo toma?\", \"¿qué sale mal?\". Facilita leer saltando."
+        },
+        {
+          "icone": "chat",
+          "titulo": "FAQ visible",
+          "sub": "preguntas reales",
+          "detalhe": "Preguntas que vienen de la búsqueda o de tu comunidad, respondidas en la propia página. El rich result de FAQ dejó de aparecer en Google el 07/05/2026: el marcado FAQPage ya no da vitrina, y el valor está en las respuestas en sí."
+        }
+      ],
+      "legenda": "Primero la respuesta, el dato propio en el medio, las preguntas reales al final."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Escribir la página de pregunta",
+      "sub": "Haz clic en cada paso.",
+      "passos": [
+        {
+          "titulo": "Responder",
+          "sub": "las 2 a 4 primeras frases",
+          "texto": [
+            "Escribe la respuesta como se la dirías a un cliente en el mostrador. Después corta lo que no responde.",
+            "Una respuesta corta es claridad para el lector. No hay fuente que muestre un tamaño exacto como factor para IA."
+          ]
+        },
+        {
+          "titulo": "Probar",
+          "sub": "tu dato",
+          "texto": [
+            "Justo después, lo que solo tú tienes: la prueba que hiciste, el número de tu negocio, el caso de un cliente (con permiso), el error que cometiste.",
+            "Con enlace a la evidencia: repositorio, página del producto, curso, foto."
+          ]
+        },
+        {
+          "titulo": "Organizar",
+          "sub": "secciones en forma de pregunta",
+          "texto": [
+            "Lista las siguientes preguntas que haría el lector y úsalas como títulos de sección. Las variaciones del clúster entran aquí.",
+            "Título de la página de hasta 60 caracteres y descripción de entre 110 y 160."
+          ]
+        },
+        {
+          "titulo": "Cerrar",
+          "sub": "FAQ y enlaces",
+          "texto": [
+            "Tres o más preguntas reales respondidas, si existen. Si no existen, sin FAQ: inventar preguntas es rellenar por rellenar.",
+            "Enlaces a la página pilar, 2 a 4 hermanas y 2 ítems del catálogo (clase 6)."
+          ],
+          "exemplo": {
+            "rot": "En INEMA",
+            "texto": "Los pilares 2 y 3 y la página de pregunta de JARVIS se publicaron el 24/09/2026; los borradores de los pilares tenían cerca de 3.150 y 2.450 palabras."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El esqueleto, el pedido al agente y la prueba del cambio",
+      "sub": "El agente de tu suscripción escribe el borrador leyendo tu material real; tú lo revisas.",
+      "blocos": [
+        {
+          "rot": "Esqueleto de la página de pregunta",
+          "icone": "arquivo",
+          "conteudo": "Título (≤ 60 caracteres): <pregunta con la palabra principal>\nDescripción (110–160): <la respuesta en una frase + lo que solo tú muestras>\n\n<h1>Pregunta del lector</h1>\n<p>Respuesta directa en 2 a 4 frases.</p>\n\n<h2>Cómo sé esto: <tu prueba/caso></h2>\n<p>Dato propio con enlace a la evidencia.</p>\n\n<h2><próxima pregunta del lector></h2>\n<h2><¿qué suele salir mal?></h2>\n\n<h2>Preguntas frecuentes</h2>   (solo si hay ≥ 3 preguntas reales)\n\nLee también: <pilar> · <hermana 1> · <hermana 2>\nActualizado el <fecha real>"
+        },
+        {
+          "rot": "Pedido de borrador (agente)",
+          "icone": "chat",
+          "conteudo": "Escribe el borrador de una página que responde: \"<pregunta>\".\nFuente ÚNICA de hechos: los archivos <rutas de tu material real>.\nReglas:\n- empieza con la respuesta en 2 a 4 frases, sin \"en este artículo\";\n- una sección \"Cómo sé esto\" con el dato propio y el enlace de la evidencia;\n- títulos de sección en forma de pregunta;\n- ningún número, nombre o fecha que no esté en la fuente; si falta, escribe [FALTA DATO];\n- FAQ solo con estas preguntas reales: <lista>; sin ellas, sin FAQ.\nAl final, lista cada número usado y dónde está en la fuente."
+        },
+        {
+          "rot": "Prueba del cambio (CHECKLIST ítem 10)",
+          "icone": "check",
+          "conteudo": "Para cada párrafo:\n1. cambia la palabra clave por otra del mismo tipo (\"pan\" → \"pastel\", \"abogacía\" → \"contabilidad\");\n2. ¿el párrafo sigue siendo verdadero?\n   sí → es genérico: reescríbelo con tu dato;\n   no → es tuyo: se queda."
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "FAQ en 2026",
+            "html": "<p>El rich result de FAQ dejó de aparecer en Google el <b>07/05/2026</b>, y su documentación se eliminó el 12/06/2026. Quien vende FAQPage como vitrina está vendiendo el pasado.</p><p>Las preguntas visibles siguen siendo útiles para quien lee. El marcado, si se queda, tiene que coincidir con el texto de la página.</p>"
+          },
+          {
+            "rot": "Lo que dice Google",
+            "html": "<p>La guía de funciones de IA de Google (mayo/2026) dice que no hay optimización especial para aparecer en AI Overviews y AI Mode, ni schema especial, y que se puede ignorar el \"chunking\" de contenido.</p><p>Lo que destaca es el contenido no commodity: punto de vista propio, experiencia directa. Es la sección \"Cómo sé esto\".</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Introducción larga</b> antes de la respuesta.</li><li><b>FAQ inventado</b> para \"tener FAQ\".</li><li><b>Párrafo que pasa la prueba del cambio</b>: sirve para cualquier sitio, luego no es tuyo.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: tu primera página de pregunta",
+      "sub": "Usa un grupo GO de la clase 3.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Borrador en el esqueleto",
+          "min": "60 min",
+          "texto": "Escribe (o pídelo al agente y revisa) una página de pregunta en el esqueleto, con tu dato propio y el enlace de la evidencia.",
+          "pronto": "la respuesta tiene de 2 a 4 frases arriba, hay una sección con tu dato y enlace, y ningún [FALTA DATO] quedó sin resolver."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Prueba del cambio",
+          "min": "20 min",
+          "texto": "Aplica la prueba del cambio en todos los párrafos y reescribe los genéricos.",
+          "pronto": "marcaste cada párrafo como \"tuyo\" o \"reescrito\", y ninguno sigue siendo verdadero con la palabra cambiada."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "¿Por qué la página de pregunta empieza con la respuesta?",
+          "opcoes": [
+            "Porque es la técnica que garantiza la cita por IA.",
+            "Porque es claridad: quien llegó con la pregunta la resuelve en segundos.",
+            "Porque Google exige 50 palabras.",
+            "Porque el FAQ queda más grande."
+          ],
+          "certa": 1,
+          "explica": "Es claridad para el lector. No hay fuente que respalde un tamaño de respuesta como factor de IA; Google dice que no hay optimización especial.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "Un consultor promete \"vitrina de FAQ en Google\" con el marcado FAQPage. En 2026...",
+          "opcoes": [
+            "Funciona mejor que nunca.",
+            "El rich result de FAQ dejó de aparecer el 07/05/2026; las preguntas valen solo por el contenido.",
+            "Solo funciona con llms.txt.",
+            "Es obligatorio para indexar."
+          ],
+          "certa": 1,
+          "explica": "La vitrina se acabó. Las preguntas reales y visibles siguen siendo útiles para el lector.",
+          "ref": "codigo"
+        },
+        {
+          "p": "Cambias \"panadería\" por \"pizzería\" y el párrafo sigue siendo verdadero. ¿Qué hacer?",
+          "opcoes": [
+            "Nada, está bien.",
+            "Reescribe con tu dato: el párrafo es genérico.",
+            "Repetir la palabra clave más veces.",
+            "Borrar la página."
+          ],
+          "certa": 1,
+          "explica": "Es la prueba del cambio. Un párrafo que sirve para cualquier negocio es commodity.",
+          "ref": "codigo"
+        },
+        {
+          "p": "Todavía no hay preguntas reales sobre el tema. ¿Y el FAQ?",
+          "opcoes": [
+            "Inventar 5 preguntas.",
+            "Pedirle a la IA preguntas probables.",
+            "Quedarte sin FAQ hasta que haya preguntas reales.",
+            "Copiar el FAQ de otra página tuya."
+          ],
+          "certa": 2,
+          "explica": "El FAQ inventado o copiado fue parte del problema de las fichas delgadas de INEMA (FAQ idéntico en todas).",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevar",
+      "itens": [
+        {
+          "t": "Pilar + preguntas",
+          "texto": "Una página pilar larga por tema central; una página por pregunta alrededor."
+        },
+        {
+          "t": "Respuesta, prueba, preguntas",
+          "texto": "Respuesta arriba, dato propio con enlace, secciones en forma de pregunta."
+        },
+        {
+          "t": "Prueba del cambio",
+          "texto": "Si el párrafo sirve para cualquier sitio, reescríbelo."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "La respuesta corta es claridad, no una técnica de IA. El rich result de FAQ terminó el 07/05/2026; el FAQ visible sigue siendo útil para el lector."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Google: funciones de IA en la Búsqueda (inglés)",
+          "href": "https://developers.google.com/search/docs/appearance/ai-features",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: actualizaciones de la documentación (inglés)",
+          "href": "https://developers.google.com/search/updates",
+          "icone": "calendario"
+        },
+        {
+          "t": "Checklist de calidad de inemaSEO (MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md",
+          "icone": "check"
+        }
+      ]
+    }
+  ]
+}

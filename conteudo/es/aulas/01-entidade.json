@@ -1,0 +1,299 @@
+{
+  "slug": "entidade",
+  "num": 1,
+  "menu": "Entidad",
+  "titulo": "Entidad: decirle al buscador quién está detrás del sitio",
+  "titulo_curto": "Entidad",
+  "minutos": 16,
+  "lead": "El contenido que solo tú puedes escribir empieza por decir quién eres \"tú\". Google y las IA juntan páginas, perfiles y menciones en una entidad: una persona, una marca. Si el sitio no lo declara de una sola manera, cada página parece de un autor distinto, y tu nombre incluso puede confundirse con otro.",
+  "objetivo": "declarar una Person y una Organization con @id fijo y sameAs separado, y hacer que el resto del sitio apunte hacia ellas.",
+  "competencias": [
+    "declarar-entidade-jsonld",
+    "usar-id-fixo",
+    "separar-sameas",
+    "detectar-colisao-de-nome"
+  ],
+  "aprende": [
+    {
+      "t": "Qué es una entidad y por qué va antes del contenido"
+    },
+    {
+      "t": "El modelo de JSON-LD con autor y marca en @id fijo"
+    },
+    {
+      "t": "Cómo el artículo, la noticia y el curso apuntan a la misma entidad"
+    },
+    {
+      "t": "Probar si las IA confunden tu nombre con otro"
+    }
+  ],
+  "hero_alt": "Una mano entrega una credencial en la recepción de una pequeña oficina, con tarjetas de presentación ordenadas sobre el mostrador.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Una entidad, muchas páginas apuntando hacia ella",
+      "sub": "Haz clic en cada bloque.",
+      "nos": [
+        {
+          "icone": "usuario",
+          "titulo": "Autor",
+          "sub": "Person · @id fijo",
+          "forte": true,
+          "detalhe": "Una sola persona, con una dirección de identidad que nunca cambia, como https://www.seusite.com/#autor. No es una página: es una etiqueta estable que las otras marcaciones citan."
+        },
+        {
+          "icone": "marca",
+          "titulo": "Marca",
+          "sub": "Organization · @id fijo",
+          "forte": true,
+          "detalhe": "La organización, con su propio @id (#organizacao). Autor y marca se conectan: el autor trabaja para la marca y la marca tiene al autor como fundador."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Páginas",
+          "sub": "apuntan por @id",
+          "itens": [
+            {
+              "icone": "texto",
+              "t": "artículo: author → #autor"
+            },
+            {
+              "icone": "megafone",
+              "t": "noticia: publisher → #organizacao"
+            },
+            {
+              "icone": "camadas",
+              "t": "curso: provider → #organizacao"
+            }
+          ],
+          "detalhe": "Ninguna página repite nombre, logo y perfiles a mano. Cada una apunta al @id, y el buscador entiende que siempre es la misma persona y la misma marca."
+        },
+        {
+          "icone": "compartilhar",
+          "titulo": "sameAs",
+          "sub": "perfiles oficiales",
+          "detalhe": "Lista de perfiles que prueban la identidad. Los perfiles de la persona van en la Person; los perfiles de la marca van en la Organization. Mezclarlos hace que el buscador crea que persona y marca son lo mismo."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Buscador e IA",
+          "sub": "juntan todo en una sola entidad",
+          "detalhe": "Los subdominios y sitios hermanos usan el mismo @id: para Google es una sola entidad. La marcación tiene que coincidir con lo que está escrito en la página; ella confirma, no inventa."
+        }
+      ],
+      "legenda": "Declara una vez, apunta siempre: el resto del curso escribe contenido en nombre de esa entidad."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Armar la entidad en cuatro pasos",
+      "sub": "Haz clic en cada paso.",
+      "passos": [
+        {
+          "titulo": "Elegir los @id",
+          "sub": "una sola vez",
+          "texto": [
+            "Usa el dominio canónico del curso 1 y un fragmento: #autor y #organizacao. No lo cambies más.",
+            "Si tienes subdominios (noticias, eventos), todos usan exactamente los mismos @id del sitio principal."
+          ]
+        },
+        {
+          "titulo": "Completar el modelo",
+          "sub": "Person + Organization",
+          "texto": [
+            "Nombre, página \"sobre mí\", logo y los perfiles oficiales. Solo perfiles que existen y que tú controlas.",
+            "La página \"sobre mí\" tiene que decir, en texto visible, lo mismo que dice la marcación."
+          ]
+        },
+        {
+          "titulo": "Ponerlo en todas las páginas",
+          "sub": "en la plantilla del sitio",
+          "texto": [
+            "El bloque de entidad entra en el layout, igual en todas las páginas.",
+            "Los marcados de cada página (artículo, noticia, curso) apuntan a él por @id, sin repetir datos."
+          ],
+          "exemplo": {
+            "rot": "En inema.club",
+            "texto": "El 24/09/2026 la Person #nei y la Organization #organization pasaron a salir en todas las páginas del portal (commit 965d901)."
+          }
+        },
+        {
+          "titulo": "Probar el nombre",
+          "sub": "colisión",
+          "texto": [
+            "Pregunta \"¿qué es [tu marca]?\" a dos asistentes. Si la respuesta habla de otra empresa u organismo, hay colisión de nombre.",
+            "La colisión no se resuelve solo con marcado: pide páginas que digan claramente quién eres, y perfiles coherentes."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "El modelo de entidad y una página que apunta a él",
+      "sub": "Cambia dominio, nombres y perfiles. No inventes un perfil que no existe.",
+      "blocos": [
+        {
+          "rot": "jsonld-entidade.json (templates del inemaSEO)",
+          "icone": "arquivo",
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://www.seusite.com/#autor\",\n      \"name\": \"Tu Nombre\",\n      \"url\": \"https://www.seusite.com/sobre/\",\n      \"worksFor\": { \"@id\": \"https://www.seusite.com/#organizacao\" },\n      \"sameAs\": [\"https://github.com/seu-usuario\", \"https://www.linkedin.com/in/seu-perfil/\"]\n    },\n    {\n      \"@type\": \"Organization\",\n      \"@id\": \"https://www.seusite.com/#organizacao\",\n      \"name\": \"Tu Marca\",\n      \"url\": \"https://www.seusite.com/\",\n      \"logo\": \"https://www.seusite.com/logo.png\",\n      \"founder\": { \"@id\": \"https://www.seusite.com/#autor\" },\n      \"sameAs\": [\"https://www.youtube.com/@suamarca\", \"https://www.instagram.com/suamarca\"]\n    }\n  ]\n}"
+        },
+        {
+          "rot": "Artículo que apunta a la entidad",
+          "icone": "texto",
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Título igual al de la página\",\n  \"datePublished\": \"2026-10-19\",\n  \"dateModified\": \"2026-10-19\",\n  \"author\": { \"@id\": \"https://www.seusite.com/#autor\" },\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
+        },
+        {
+          "rot": "Comprobar en la radiografía del curso 1",
+          "icone": "terminal",
+          "conteudo": "tools/auditoria.sh https://www.seusite.com / /sobre/ /um-artigo/\n# busca la línea JSON-LD de cada página: Person y Organization en todas"
+        },
+        {
+          "rot": "Prueba de colisión de nombre (anotación)",
+          "icone": "lista",
+          "conteudo": "Prueba de entidad el <dd/mm/aaaa>\nPregunta: \"¿qué es <tu marca>?\"\n- Asistente 1: <habla de mí | habla de otro: ¿quién? | no sabe>\n- Asistente 2: <habla de mí | habla de otro: ¿quién? | no sabe>\n¿Colisión? <sí/no>. Lo que voy a escribir en la página sobre: <...>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Salida capturada (19/10/2026)",
+            "html": "<p>JSON-LD de la home de inema.club, solo los ítems con @id:</p><pre>EducationalOrganization  https://www.inema.club/#organization  sameAs: 5\nPerson                   https://www.inema.club/#nei           sameAs: 1\nWebSite                  https://www.inema.club/#website</pre><p>En una página de pregunta del mismo sitio:</p><pre>publisher → {\"@id\": \"https://www.inema.club/#organization\"}</pre>"
+          },
+          {
+            "rot": "Colisión de nombre: el caso",
+            "html": "<p>El 10/07/2026, la batería de 20 preguntas fijas de INEMA corrió en Claude y en Gemini. INEMA apareció en <b>0 de 48</b> respuestas neutras en Claude y en <b>0 de 4</b> en Gemini.</p><p>Peor aún: \"¿Qué es INEMA?\" tuvo 4 de 4 respuestas sobre INEMA-BA, un organismo ambiental. Después de eso se publicaron 54 fichas en /conhecimento/ que dicen quién es INEMA.</p>"
+          },
+          {
+            "rot": "Errores comunes",
+            "html": "<ul><li><b>Un @id por página</b>: se convierte en una entidad nueva en cada página.</li><li><b>sameAs mezclado</b>: perfil de la persona en la marca, y viceversa.</li><li><b>Marcado que el texto no confirma</b>: Google pide que la estructura coincida con lo visible.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Práctica: tu entidad",
+      "sub": "Usa el dominio canónico que elegiste en el curso 1.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Entidad publicada",
+          "min": "30 min",
+          "texto": "Completa el modelo con tus datos, ponlo en el layout del sitio y haz que al menos un tipo de página (artículo, producto o curso) apunte al @id. Publica y corre la radiografía en 3 páginas.",
+          "pronto": "el validador de schema.org muestra Person y Organization sin error, y la radiografía muestra las dos en las 3 páginas."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Prueba de colisión",
+          "min": "15 min",
+          "texto": "Pregunta \"¿qué es [tu marca]?\" y \"¿quién es [tu nombre]?\" a dos asistentes. Completa la anotación.",
+          "pronto": "la anotación dice, para cada asistente, si habló de ti, de otro (quién) o no supo, y qué vas a escribir en la página \"sobre\"."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Prueba lo que aprendiste",
+      "sub": "La explicación aparece después de tu respuesta.",
+      "perguntas": [
+        {
+          "p": "El sitio de noticias es un subdominio del sitio principal. ¿Qué @id usa para la organización?",
+          "opcoes": [
+            "Un @id propio del subdominio.",
+            "El mismo @id del sitio principal.",
+            "Ninguno: una noticia no necesita entidad.",
+            "La dirección de la página \"sobre\"."
+          ],
+          "certa": 1,
+          "explica": "El mismo @id en todos los sitios y subdominios: para Google es una sola entidad. Un @id por sitio divide la identidad.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "¿Dónde van los perfiles del LinkedIn personal y del Instagram de la marca?",
+          "opcoes": [
+            "Los dos en la Organization.",
+            "LinkedIn en la Person, Instagram en la Organization.",
+            "Los dos en la Person.",
+            "Solo en el pie de página, sin marcación."
+          ],
+          "certa": 1,
+          "explica": "sameAs separado: perfiles de la persona en la Person, perfiles de la marca en la Organization. Mezclarlos confunde a la persona con la marca.",
+          "ref": "codigo"
+        },
+        {
+          "p": "\"¿Qué es [tu marca]?\" devuelve una respuesta sobre un organismo público con el mismo nombre. ¿Qué es esto?",
+          "opcoes": [
+            "Error de robots.txt.",
+            "Colisión de nombre: el asistente conoce otra entidad con tu nombre.",
+            "Penalización de Google.",
+            "Falta de llms.txt."
+          ],
+          "certa": 1,
+          "explica": "Fue el caso de INEMA con INEMA-BA. La salida es dejar claro quién eres, en páginas y perfiles coherentes, y volver a medir después.",
+          "ref": "passos"
+        },
+        {
+          "p": "La marcación dice que el autor es un especialista con 20 años de experiencia, pero la página no habla de eso. ¿Vale?",
+          "opcoes": [
+            "Vale, la marcación es para el robot.",
+            "No: la estructura tiene que coincidir con el texto visible.",
+            "Vale si está en el sameAs.",
+            "Vale solo para la IA."
+          ],
+          "certa": 1,
+          "explica": "Google pide que los datos estructurados confirmen lo que muestra la página. Una marcación sin texto que la respalde es una señal fabricada.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Para llevar",
+      "itens": [
+        {
+          "t": "Dos @id fijos",
+          "texto": "Un autor y una marca, iguales en todas las páginas y subdominios."
+        },
+        {
+          "t": "Señala, no repitas",
+          "texto": "Artículo, noticia y curso citan el @id."
+        },
+        {
+          "t": "Prueba el nombre",
+          "texto": "La colisión de nombre aparece al hacer la pregunta y anotar la respuesta."
+        },
+        {
+          "t": "La vara de 2026",
+          "texto": "No existe un schema especial para la IA: la entidad vale porque dice quién está detrás y coincide con el texto."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Para ir más allá",
+      "links": [
+        {
+          "t": "Modelo jsonld-entidade.json (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/jsonld-entidade.json",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Validador de schema.org",
+          "href": "https://validator.schema.org/",
+          "icone": "check"
+        },
+        {
+          "t": "Google: datos estructurados de organización (inglés)",
+          "href": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: contenido útil y confiable (inglés)",
+          "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "territorio",
+  "num": 2,
+  "menu": "Territory",
+  "titulo": "One territory per site and one owner page per intent",
+  "titulo_curto": "Territory and owner page",
+  "minutos": 15,
+  "lead": "If you have more than one site, or a blog, a store, and an events page, you tend to write the same thing in several places. The result is that your pages compete with each other for the same search and both lose. This lesson decides where each type of content lives and which page is the owner page for each intent.",
+  "objetivo": "decide where each type of content lives and write the canonical map: one owner page per search intent.",
+  "competencias": [
+    "definir-territorio-por-site",
+    "mapear-intencao-de-busca",
+    "evitar-canibalizacao"
+  ],
+  "aprende": [
+    {
+      "t": "What a territory is and why it prevents cannibalization"
+    },
+    {
+      "t": "Where evergreen content, news, and events live"
+    },
+    {
+      "t": "Building the canonical map by intent"
+    },
+    {
+      "t": "What to do with the page that lost the contest"
+    }
+  ],
+  "hero_alt": "A paper map with neighborhoods marked by colored pins in separate areas, seen from above.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "Everything in its place",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "camadas",
+          "titulo": "Content types",
+          "sub": "what you publish",
+          "itens": [
+            {
+              "icone": "texto",
+              "t": "\"what is\", \"how to\", guides"
+            },
+            {
+              "icone": "megafone",
+              "t": "dated news"
+            },
+            {
+              "icone": "calendario",
+              "t": "schedule and sign-up"
+            }
+          ],
+          "detalhe": "Before you write, classify: will the topic still matter a year from now (evergreen), does it age with the date (news), or is it a scheduled meeting (event)?"
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Main site",
+          "sub": "evergreen and pillar pages",
+          "forte": true,
+          "detalhe": "Guides, pillar pages, \"what is\", \"how to\", and catalog all live on one domain. This is where authority builds up."
+        },
+        {
+          "icone": "megafone",
+          "titulo": "News",
+          "sub": "dated news",
+          "detalhe": "Launches, \"what changed\", news. It ages without competing with the guide. Don't write a \"what is X\" page here: that one belongs to the main site."
+        },
+        {
+          "icone": "calendario",
+          "titulo": "Events",
+          "sub": "schedule and recording",
+          "detalhe": "One page per event, with event markup. A permanent guide on the event's topic lives on the main site, and the event links to it."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Owner page",
+          "sub": "one per intent",
+          "forte": true,
+          "detalhe": "For each search intent, only one page answers. The others link to it or redirect (301). Two of your pages on the same search lose both."
+        }
+      ],
+      "legenda": "Golden rule: one search intent = one owner page = one site."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "From inventory to map",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "List the sites",
+          "sub": "and what each one does",
+          "texto": [
+            "Site, blog, store, events page, subdomains, profiles with their own pages. For each one: what belongs to it and what it does NOT do.",
+            "The \"does not do\" is what prevents the competition."
+          ]
+        },
+        {
+          "titulo": "List the intents",
+          "sub": "what the person wants",
+          "texto": [
+            "Intent is what the person wants to solve, not the exact word. \"how to manage agents\" and \"AI agent management\" are the same intent.",
+            "Start with the 5 most important intents for your business."
+          ]
+        },
+        {
+          "titulo": "Pick the owner",
+          "sub": "one per intent",
+          "texto": [
+            "For each intent, pick the most complete page, on the right site by territory.",
+            "The others become support: they link to the owner page with descriptive text, or they are merged and redirected."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "The intent \"AI agent management\" has its owner page on the main site; the event page on the topic stays an event and links to the guide."
+          }
+        },
+        {
+          "titulo": "Check before you create",
+          "sub": "every new page",
+          "texto": [
+            "Before a page is born, check whether you already have another one answering the same search: on the site, on the blog, in the FAQs, in the events.",
+            "If one exists, improve the owner page instead of creating a competitor."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The two tables you will fill in",
+      "sub": "Copy them into a spreadsheet or a text file.",
+      "blocos": [
+        {
+          "rot": "Territory table",
+          "icone": "lista",
+          "conteudo": "| Site | Territory (only this) | What it does NOT do |\n|---|---|---|\n| www.seusite.com | guides, pillar pages, \"what is\", catalog | dated news, schedule |\n| blog/notícias | dated news, \"what changed\" | \"what is X\" page |\n| eventos | schedule, one page per event, recording | permanent guide |"
+        },
+        {
+          "rot": "Canonical map by intent",
+          "icone": "alvo",
+          "conteudo": "| Intent | Owner page | Pages that now link (or 301) |\n|---|---|---|\n| <intent 1> | https://www.seusite.com/<dona>/ | <competing page> → links to the owner page |\n| <intent 2> | ... | <old FAQ> → 301 to the owner page |"
+        },
+        {
+          "rot": "Before creating a page: look for a competitor",
+          "icone": "terminal",
+          "conteudo": "# no repositório do site, procure a palavra principal da nova página\ngrep -ril \"gestão de agentes\" conteudo/ paginas/ | head\n# no Google: site:seusite.com \"gestão de agentes\""
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Why territory matters",
+            "html": "<p>At INEMA, the 28-day baseline (08/25 to 09/21/2026) showed that <b>639 of 647 clicks</b> came from people who were already searching for the brand. Generic searches added up to 8 clicks and 72 impressions.</p><p>With the catalog spread across the main site, the courses on another domain, the FAQs, and the news, several pages answered the same search. Territory was the first decision before writing any new content.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>News turning into a guide</b>: a \"what is X\" on the news blog competes with the pillar page.</li><li><b>Two FAQs for the same question</b>: pick one owner and redirect the other.</li><li><b>\"Other sites in the network\" block</b> on every page: links between sites are contextual and rare.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your map",
+      "sub": "A spreadsheet is enough.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Territory board",
+          "min": "20 min",
+          "texto": "List all your sites and subdomains with each one's territory and what it doesn't do.",
+          "pronto": "every site has a row with \"territory\" and \"doesn't do\" filled in, and no content type shows up on two sites."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Five intents with an owner",
+          "min": "30 min",
+          "texto": "Pick the 5 most important intents and, for each one, the owner page and what happens to the competing pages (link or 301).",
+          "pronto": "the map has 5 rows, each with a single owner page, and the competing pages have a decided destination."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "You want to write \"what is customer service automation\". Where does it live?",
+          "opcoes": [
+            "On the news site, because it's a new topic.",
+            "On the main site, because it's evergreen.",
+            "On both, to be safe.",
+            "On the event page."
+          ],
+          "certa": 1,
+          "explica": "\"What is\" is still valid a year from now: it's evergreen and lives on the main site. On both, the pages compete for the same search.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Two of your pages answer \"how to manage AI agents\". What do you do?",
+          "opcoes": [
+            "Keep both: more chances.",
+            "Pick one owner; the other links to it or redirects.",
+            "Delete both.",
+            "Change only the title of one."
+          ],
+          "certa": 1,
+          "explica": "Two pages on the same intent both lose. One owner per intent; the other becomes support or a 301.",
+          "ref": "passos"
+        },
+        {
+          "p": "What is \"search intent\"?",
+          "opcoes": [
+            "The exact word typed.",
+            "What the person wants to solve, even with different words.",
+            "The number of searches per month.",
+            "The position on Google."
+          ],
+          "certa": 1,
+          "explica": "Different words can have the same intent. The map is by intent, so you don't create one page per word variation.",
+          "ref": "passos"
+        },
+        {
+          "p": "What is the clearest sign that territory is missing?",
+          "opcoes": [
+            "The site has few pages.",
+            "The same topic shows up in the guide, on the blog, and in an FAQ, each with its own answer.",
+            "The site has no llms.txt.",
+            "The logo is different on each site."
+          ],
+          "certa": 1,
+          "explica": "Scattered answers to the same question is cannibalization. The territory says where each type lives.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Territory",
+          "texto": "Evergreen on the main site, news on the news site, schedule on the events site."
+        },
+        {
+          "t": "Owner page",
+          "texto": "One per intent; the others link or redirect."
+        },
+        {
+          "t": "Before you create",
+          "texto": "Look for the competing page in your own house."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "inemaSEO method, step 5 (MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Google: duplicate URLs and canonicals (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: 301 redirects (English)",
+          "href": "https://developers.google.com/search/docs/crawling-indexing/301-redirects",
+          "icone": "seta"
+        }
+      ]
+    }
+  ]
+}

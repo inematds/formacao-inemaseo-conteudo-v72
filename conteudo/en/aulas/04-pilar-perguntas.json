@@ -1,0 +1,275 @@
+{
+  "slug": "pilar-perguntas",
+  "num": 4,
+  "menu": "Pillar page",
+  "titulo": "Pillar page and question pages with a direct answer",
+  "titulo_curto": "Pillar page and questions",
+  "minutos": 18,
+  "lead": "A pillar page is the long page that covers a central topic of your business. Around it, question pages each answer one question, starting with the answer. It's not an AI trick: it's respect for people who arrived with a question. And the questions section at the end stays useful to the reader, even without the showcase Google removed in 2026.",
+  "objetivo": "write a question page with a direct answer at the top, sections shaped as questions, and a visible FAQ, without promising a rich result.",
+  "competencias": [
+    "planejar-pilar",
+    "escrever-resposta-direta",
+    "usar-faq-sem-promessa",
+    "aplicar-teste-da-troca"
+  ],
+  "aprende": [
+    {
+      "t": "The difference between a pillar page and a question page"
+    },
+    {
+      "t": "The skeleton of a question page"
+    },
+    {
+      "t": "FAQ in 2026: useful to the reader, no showcase"
+    },
+    {
+      "t": "The swap test against generic text"
+    }
+  ],
+  "hero_alt": "A bright library with a large open reference book and question cards pinned to a corkboard around it.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "A pillar page in the center, questions around it",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "camadas",
+          "titulo": "Pillar page",
+          "sub": "central topic, long text",
+          "forte": true,
+          "detalhe": "One page per central topic (2 or 3 on the whole site), long: the inemaSEO method says 2,500 to 4,000 words. It links to all the question pages on the topic and to the other pillar pages."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Question pages",
+          "sub": "one question each",
+          "detalhe": "Each one answers one intent from your cluster (lesson 3). Short enough to solve it, long enough to bring your first-hand data."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Direct answer",
+          "sub": "2 to 4 sentences at the top",
+          "forte": true,
+          "detalhe": "The page starts by answering, with no \"in this article we will.\" Someone who arrived through the question reads the answer in seconds and decides whether they want the detail."
+        },
+        {
+          "icone": "lista",
+          "titulo": "Sections as questions",
+          "sub": "headings the reader would ask",
+          "detalhe": "The section headings (h2) are the reader's next questions: \"how long does it take?\", \"what goes wrong?\". It makes skimming easier."
+        },
+        {
+          "icone": "chat",
+          "titulo": "Visible FAQ",
+          "sub": "real questions",
+          "detalhe": "Questions coming from search or from your community, answered on the page itself. The FAQ rich result stopped appearing on Google on 05/07/2026: the FAQPage markup no longer gives you a showcase, and the value is in the answers themselves."
+        }
+      ],
+      "legenda": "Answer first, first-hand data in the middle, real questions at the end."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Writing the question page",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Answer",
+          "sub": "the first 2 to 4 sentences",
+          "texto": [
+            "Write the answer the way you'd tell a customer at the counter. Then cut whatever doesn't answer.",
+            "A short answer is clarity for the reader. No source shows an exact length as a factor for AI."
+          ]
+        },
+        {
+          "titulo": "Prove it",
+          "sub": "your first-hand data",
+          "texto": [
+            "Right after that, what only you have: the test you ran, your business's numbers, a customer's case (with permission), the mistake you made.",
+            "With a link to the evidence: repository, product page, course, photo."
+          ]
+        },
+        {
+          "titulo": "Organize",
+          "sub": "sections as questions",
+          "texto": [
+            "List the follow-up questions the reader would ask and use them as section headings. The cluster variations go here.",
+            "Page title up to 60 characters and description between 110 and 160."
+          ]
+        },
+        {
+          "titulo": "Close",
+          "sub": "FAQ and links",
+          "texto": [
+            "Three or more real questions answered, if they exist. If they don't, no FAQ: making up questions is padding.",
+            "Links to the pillar page, 2 to 4 sister pages, and 2 catalog items (lesson 6)."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "Pillar pages 2 and 3 and the JARVIS question page were published on 09/24/2026; the pillar drafts were about 3,150 and 2,450 words."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The skeleton, the request to the agent, and the swap test",
+      "sub": "The agent from your subscription writes the draft by reading your real material; you review it.",
+      "blocos": [
+        {
+          "rot": "Question page skeleton",
+          "icone": "arquivo",
+          "conteudo": "Title (≤ 60 characters): <question with the main keyword>\nDescription (110–160): <the answer in one sentence + what only you show>\n\n<h1>Reader's question</h1>\n<p>Direct answer in 2 to 4 sentences.</p>\n\n<h2>How I know this: <your test/case></h2>\n<p>First-hand data with a link to the evidence.</p>\n\n<h2><reader's next question></h2>\n<h2><what usually goes wrong?></h2>\n\n<h2>Frequently asked questions</h2>   (only if there are ≥ 3 real questions)\n\nAlso read: <pillar page> · <sister 1> · <sister 2>\nUpdated on <real date>"
+        },
+        {
+          "rot": "Draft request (agent)",
+          "icone": "chat",
+          "conteudo": "Write the draft of a page that answers: \"<question>\".\nONLY source of facts: the files <paths to your real material>.\nRules:\n- start with the answer in 2 to 4 sentences, no \"in this article\";\n- a \"How I know this\" section with the first-hand data and the evidence link;\n- section headings in question form;\n- no number, name, or date that is not in the source; if something is missing, write [FALTA DADO];\n- FAQ only with these real questions: <list>; without them, no FAQ.\nAt the end, list each number used and where it is in the source."
+        },
+        {
+          "rot": "Swap test (CHECKLIST item 10)",
+          "icone": "check",
+          "conteudo": "For each paragraph:\n1. swap the keyword for another of the same kind (\"bread\" → \"cake\", \"law firm\" → \"accounting firm\");\n2. is the paragraph still true?\n   yes → it's generic: rewrite it with your data;\n   no → it's yours: it stays."
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "FAQ in 2026",
+            "html": "<p>The FAQ rich result stopped appearing on Google on <b>05/07/2026</b>, and its documentation was removed on 06/12/2026. Anyone selling FAQPage as a showcase is selling the past.</p><p>Visible questions are still useful to readers. The markup, if you keep it, has to match the text on the page.</p>"
+          },
+          {
+            "rot": "What Google says",
+            "html": "<p>Google's AI features guide (May 2026) says there is no special optimization to appear in AI Overviews and AI Mode, no special schema, and that you can ignore content \"chunking\".</p><p>What it highlights is non-commodity content: your own point of view, direct experience. That's the \"How I know this\" section.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Rambling intro</b> before the answer.</li><li><b>Made-up FAQ</b> just to \"have an FAQ\".</li><li><b>A paragraph that passes the swap test</b>: it fits any site, so it isn't yours.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your first question page",
+      "sub": "Use a GO group from lesson 3.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Draft in the skeleton",
+          "min": "60 min",
+          "texto": "Write (or ask the agent and review) a question page using the skeleton, with your first-hand data and the evidence link.",
+          "pronto": "the answer is 2 to 4 sentences at the top, there is a section with your data and link, and no [FALTA DADO] was left unresolved."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Swap test",
+          "min": "20 min",
+          "texto": "Apply the swap test to every paragraph and rewrite the generic ones.",
+          "pronto": "you marked each paragraph as \"yours\" or \"rewritten\", and none stays true with the word swapped."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "Why does the question page start with the answer?",
+          "opcoes": [
+            "Because it's the technique that guarantees AI citation.",
+            "Because it's clarity: someone who arrived with the question gets it resolved in seconds.",
+            "Because Google requires 50 words.",
+            "Because the FAQ gets bigger."
+          ],
+          "certa": 1,
+          "explica": "It's clarity for the reader. No source supports answer length as an AI factor; Google says there is no special optimization.",
+          "ref": "passos",
+          "cert": true
+        },
+        {
+          "p": "A consultant promises a \"FAQ showcase on Google\" with FAQPage markup. In 2026...",
+          "opcoes": [
+            "It works better than ever.",
+            "The FAQ rich result stopped appearing on 05/07/2026; the questions are worth only their content.",
+            "It only works with llms.txt.",
+            "It's required for indexing."
+          ],
+          "certa": 1,
+          "explica": "The showcase is over. Real, visible questions are still useful to the reader.",
+          "ref": "codigo"
+        },
+        {
+          "p": "You swap \"bakery\" for \"pizzeria\" and the paragraph is still true. What do you do?",
+          "opcoes": [
+            "Nothing, it's fine.",
+            "Rewrite it with your own data: the paragraph is generic.",
+            "Repeat the keyword more times.",
+            "Delete the page."
+          ],
+          "certa": 1,
+          "explica": "It's the swap test. A paragraph that fits any business is commodity.",
+          "ref": "codigo"
+        },
+        {
+          "p": "There are no real questions about the topic yet. What about the FAQ?",
+          "opcoes": [
+            "Make up 5 questions.",
+            "Ask AI for likely questions.",
+            "Go without an FAQ until there are real questions.",
+            "Copy the FAQ from another page of yours."
+          ],
+          "certa": 2,
+          "explica": "A made-up or copied FAQ was part of the problem with INEMA's thin listing pages (identical FAQ on all of them).",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Pillar page + questions",
+          "texto": "One long pillar page per core topic; one page per question around it."
+        },
+        {
+          "t": "Answer, proof, questions",
+          "texto": "Answer at the top, first-hand data with a link, sections phrased as questions."
+        },
+        {
+          "t": "Swap test",
+          "texto": "If the paragraph fits any site, rewrite it."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "A short answer is clarity, not an AI technique. The FAQ rich result ended on 05/07/2026; a visible FAQ is still useful to the reader."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: AI features in Search (English)",
+          "href": "https://developers.google.com/search/docs/appearance/ai-features",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: documentation updates (English)",
+          "href": "https://developers.google.com/search/updates",
+          "icone": "calendario"
+        },
+        {
+          "t": "inemaSEO quality checklist (MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/CHECKLIST.md",
+          "icone": "check"
+        }
+      ]
+    }
+  ]
+}

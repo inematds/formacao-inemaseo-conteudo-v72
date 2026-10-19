@@ -1,0 +1,288 @@
+{
+  "slug": "palavra-chave",
+  "num": 3,
+  "menu": "Content plan",
+  "titulo": "Validate a keyword without a paid tool",
+  "titulo_curto": "Validate a keyword",
+  "minutos": 18,
+  "lead": "Writing about what nobody searches for is wasted work; so is writing about what every big portal already owns. Before you open the editor, score each keyword with free signals: autocomplete, Google Trends, Search Console, and the search results themselves. And only move forward if you have something real to say.",
+  "objetivo": "score 10 keywords with the GO/NO-GO score and group the approved ones by intent, each group with one owner page.",
+  "competencias": [
+    "score-keyword",
+    "read-search-result",
+    "group-by-intent"
+  ],
+  "aprende": [
+    {
+      "t": "The free sources and what each one tells you"
+    },
+    {
+      "t": "The GO / MAYBE / NO-GO score, criterion by criterion"
+    },
+    {
+      "t": "Group keywords by intent in a spreadsheet"
+    },
+    {
+      "t": "The honest limit of the free tools and when a paid one helps"
+    }
+  ],
+  "hero_alt": "A person at the kitchen table sorts paper cards into two piles, with a laptop beside them.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From raw list to approved content plan",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "lista",
+          "titulo": "Raw list",
+          "sub": "ideas and questions",
+          "detalhe": "Customer questions, doubts from your community, queries already showing up in Search Console, suggestions from an AI assistant. Quantity is good here: the filter comes later."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Free sources",
+          "sub": "demand signals",
+          "itens": [
+            {
+              "icone": "texto",
+              "t": "Google autocomplete"
+            },
+            {
+              "icone": "grafico",
+              "t": "Google Trends"
+            },
+            {
+              "icone": "grafico",
+              "t": "Search Console"
+            },
+            {
+              "icone": "lista",
+              "t": "search result (top 10)"
+            }
+          ],
+          "detalhe": "Each source gives a partial signal. A suggestion in autocomplete = someone searches for it. An impression in Search Console = you already show up. The top 10 shows whether you can compete."
+        },
+        {
+          "icone": "alvo",
+          "titulo": "Score",
+          "sub": "sum of points",
+          "forte": true,
+          "detalhe": "Each criterion adds or subtracts points. The criterion that weighs the most: you have an experiment, course, project, or real data to cite (+2; without it, −3)."
+        },
+        {
+          "icone": "portao",
+          "titulo": "Decision",
+          "sub": "GO ≥ 6 · MAYBE 3–5 · NO-GO ≤ 2",
+          "detalhe": "GO goes into the content plan. MAYBE goes in only if there's room. NO-GO is out, even if the keyword looks good."
+        },
+        {
+          "icone": "camadas",
+          "titulo": "Clusters",
+          "sub": "by intent",
+          "detalhe": "Approved keywords are grouped by intent. Each group becomes ONE owner page (lesson 2), and the variations become sections of it, not new pages."
+        }
+      ],
+      "legenda": "Without first-hand data, the score drops three points: that's how the score separates your content from non-commodity content."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Score a keyword in five looks",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Autocomplete",
+          "sub": "+2",
+          "texto": [
+            "Type the start of the search into Google, in an incognito window. If the phrase shows up as a suggestion, someone searches for it.",
+            "Repeat with letters after the term (\"how to make bread a\", \"b\"...) to collect real variations."
+          ]
+        },
+        {
+          "titulo": "Trends",
+          "sub": "+2 or +3",
+          "texto": [
+            "In Google Trends, compare with an anchor term you know. Interest above zero over 12 months: +2. At least 10% of the anchor: +3.",
+            "Zero over 12 months is a NO-GO signal, no matter how much you like the idea."
+          ]
+        },
+        {
+          "titulo": "Search Console",
+          "sub": "+3",
+          "texto": [
+            "If the query already has an impression in your Search Console, at any position, it earns the highest point: it's confirmed demand for your site.",
+            "A query with impressions and no dedicated page is a content-plan topic validated for free (course 3 goes deeper)."
+          ]
+        },
+        {
+          "titulo": "Search result",
+          "sub": "+2 / −2",
+          "texto": [
+            "Open the top 10. At least 3 weak results (forum, video without text, old page, another language): +2.",
+            "Top 10 dominated by big platforms with a page specific to the search: −2. Intent to learn or buy: +1."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The score spreadsheet and the grouping request",
+      "sub": "Copy it into your spreadsheet. The grouping can be done by an agent on your subscription, with your review.",
+      "blocos": [
+        {
+          "rot": "GO/NO-GO score (inemaSEO method, step 6)",
+          "icone": "lista",
+          "conteudo": "| Criterion | Points |\n|---|---|\n| Shows up in Google autocomplete | +2 |\n| Google Trends > 0 over 12 months (≥ 10% of an anchor term: +3) | +2 |\n| Already has impressions in Search Console | +3 |\n| Intent to learn or buy | +1 |\n| Top 10 with ≥ 3 weak results (forum, video with no text, old, other language) | +2 |\n| Top 10 dominated by big platforms with a specific page | −2 |\n| You have a real experiment/course/project to cite | +2 (without it: −3) |\n\nGO ≥ 6 · MAYBE 3–5 · NO-GO ≤ 2"
+        },
+        {
+          "rot": "Spreadsheet columns",
+          "icone": "grafico",
+          "conteudo": "termo | autocomplete | trends | gsc | intencao | top10_fraco | top10_grandes | dado_proprio (qual?) | score | decisao | cluster"
+        },
+        {
+          "rot": "Request to group by intent (agent)",
+          "icone": "chat",
+          "conteudo": "Below are approved (GO) keywords. Group them by search INTENT:\nwhat the person wants to solve, not the exact word.\nRules:\n- each group gets a short intent name and the main keyword;\n- the other keywords in the group become sections of the same page, never new pages;\n- do not invent keywords or numbers; use only the list;\n- if a keyword does not fit any group, leave it alone.\nAnswer in a table: grupo | palavra principal | variações.\n\nLISTA:\n<cole aqui>"
+        }
+      ],
+      "saida": {
+        "selo": "simulacao",
+        "abas": [
+          {
+            "rot": "Scored example",
+            "html": "<p>Fictional example, from a sourdough bakery:</p><ul><li><b>\"como fazer levain\"</b>: autocomplete +2, Trends +3, no impressions 0, learning +1, top 10 with 3 weak results +2, recipe tested at the bakery itself +2 → <b>10, GO</b>.</li><li><b>\"melhor pão do Brasil\"</b>: autocomplete +2, Trends +2, no impressions 0, no clear intent 0, big portals −2, nothing first-hand −3 → <b>−1, NO-GO</b>.</li></ul>"
+          },
+          {
+            "rot": "The limit of free",
+            "html": "<p>Exact search volume doesn't exist for free. Google Ads Keyword Planner, in an account with no campaign, shows only ranges (10–100, 100–1K).</p><p>Paid tools (DataForSEO, Semrush, Ahrefs) give numbers and difficulty. They're optional: check the price on each site. The score above decides without them.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your content plan",
+      "sub": "A spreadsheet with the template's columns.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Ten scored terms",
+          "min": "60 min",
+          "texto": "Build a list of 10 terms from your topic and score each one with the five checks. In the \"dado próprio\" column, write which experiment, product, or real case you would cite.",
+          "pronto": "the spreadsheet has 10 rows with a score and a decision, and every GO row has its first-hand data described."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Clusters",
+          "min": "20 min",
+          "texto": "Group the GO terms by intent (by hand or with the request to the agent) and check the result. Cross-check with the canonical map from lesson 2.",
+          "pronto": "each group has one main keyword and one owner page, and no group produced two pages."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "A term adds up to 7 points, but you have no case or first-hand data to cite. What is the real score?",
+          "opcoes": [
+            "7: GO.",
+            "It loses the +2 and gets −3, and drops to MAYBE or NO-GO.",
+            "9: first-hand data doesn't matter.",
+            "You can't know without a paid tool."
+          ],
+          "certa": 1,
+          "explica": "The first-hand data criterion is what separates your content from commodity content. Without it, the page would be the same as the others.",
+          "ref": "codigo",
+          "cert": true
+        },
+        {
+          "p": "Which signal is worth the most points?",
+          "opcoes": [
+            "Showing up in autocomplete.",
+            "Already having impressions in your Search Console.",
+            "Weak top 10.",
+            "Buying intent."
+          ],
+          "certa": 1,
+          "explica": "Impressions in your own Search Console are confirmed demand for your site: +3.",
+          "ref": "passos"
+        },
+        {
+          "p": "Five approved keywords have the same intent. How many pages?",
+          "opcoes": [
+            "Five, one per keyword.",
+            "One owner page; the variations become sections.",
+            "Two, to test.",
+            "None."
+          ],
+          "certa": 1,
+          "explica": "One page per keyword variation is the shortcut that turns into cannibalization and scaled content.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What can you learn for free about search volume?",
+          "opcoes": [
+            "The exact monthly number.",
+            "Signals and ranges: autocomplete, relative Trends, Keyword Planner ranges, and your own impressions.",
+            "Nothing.",
+            "Only the difficulty."
+          ],
+          "certa": 1,
+          "explica": "Exact volume is a paid-tool thing. The free signals are enough to decide GO or NO-GO.",
+          "ref": "codigo"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Five checks",
+          "texto": "Autocomplete, Trends, Search Console, top 10, and your own first-hand data."
+        },
+        {
+          "t": "GO ≥ 6",
+          "texto": "MAYBE only if there's room left; NO-GO is out."
+        },
+        {
+          "t": "Group = page",
+          "texto": "Variations become sections of the owner page."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "Google's guide for AI says non-commodity content is what counts: the first-hand data point is the criterion that weighs the most."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google Trends",
+          "href": "https://trends.google.com/",
+          "icone": "grafico"
+        },
+        {
+          "t": "Google Search Console",
+          "href": "https://search.google.com/search-console",
+          "icone": "grafico"
+        },
+        {
+          "t": "Google: optimization guide for AI features (English)",
+          "href": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+          "icone": "lupa"
+        },
+        {
+          "t": "inemaSEO method, step 6 (MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/docs/METODO.md",
+          "icone": "arquivo"
+        }
+      ]
+    }
+  ]
+}

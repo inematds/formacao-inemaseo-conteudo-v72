@@ -39,3 +39,8 @@ Somas: direto 2+2+2+2 = 8; desvio 1+1+2+2+2 = 8 (não passa do direto). Máximo 
 - Clusters por intenção sem script (não há um no inemaseo-metodo): planilha.
 - Saída real do `validar_extracao.mjs` capturada em 19/10/2026 com uma fonte de exemplo (padaria), dentro de `saida` selo real.
 - Números da ESTRATEGIA fora da lista "Casos reais" (catálogo, preços, comunidade) não entram.
+
+## Resultado (19/10/2026)
+- Portão: `validar.py` OK em PT/EN/ES (único link falho no `--links`: curso 3, ainda não publicado); `conferir-tela.cjs` 27 páginas × 2 larguras OK, simconversa percorrida (máx. 8).
+- Imagens: 10/10 pelo Codex na 1ª tentativa; nenhuma reserva flux.
+- Tradução: 1025 textos por idioma (Sonnet 5.5 pela assinatura), 0 sem tradução; glossário ampliado (território, escada de links, ficha, trava anti-invenção, conteúdo escalado, colisão de nome).

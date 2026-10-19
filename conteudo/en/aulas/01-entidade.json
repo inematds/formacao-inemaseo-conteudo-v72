@@ -1,0 +1,299 @@
+{
+  "slug": "entidade",
+  "num": 1,
+  "menu": "Entity",
+  "titulo": "Entity: telling search engines who is behind the site",
+  "titulo_curto": "Entity",
+  "minutos": 16,
+  "lead": "Content only you can write starts by saying who \"you\" are. Google and AI tools gather pages, profiles, and mentions into an entity: a person, a brand. If the site doesn't declare this in one single way, each page looks like it was written by a different author, and your name can even be confused with someone else's.",
+  "objetivo": "declare a Person and an Organization with a fixed @id and a separate sameAs, and make the rest of the site point to them.",
+  "competencias": [
+    "declarar-entidade-jsonld",
+    "usar-id-fixo",
+    "separar-sameas",
+    "detectar-colisao-de-nome"
+  ],
+  "aprende": [
+    {
+      "t": "What an entity is and why it comes before content"
+    },
+    {
+      "t": "The JSON-LD template with author and brand under a fixed @id"
+    },
+    {
+      "t": "How article, news, and course point to the same entity"
+    },
+    {
+      "t": "Testing whether AI tools confuse your name with another"
+    }
+  ],
+  "hero_alt": "A hand hands over a badge at the front desk of a small office, with business cards neatly arranged on the counter.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "One entity, many pages pointing to it",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "usuario",
+          "titulo": "Author",
+          "sub": "Person · fixed @id",
+          "forte": true,
+          "detalhe": "A single person, with an identity address that never changes, like https://www.seusite.com/#autor. It isn't a page: it's a stable label that the other markup refers to."
+        },
+        {
+          "icone": "marca",
+          "titulo": "Brand",
+          "sub": "Organization · fixed @id",
+          "forte": true,
+          "detalhe": "The organization, with its own @id (#organizacao). Author and brand are linked: the author works for the brand, and the brand has the author as its founder."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Pages",
+          "sub": "point by @id",
+          "itens": [
+            {
+              "icone": "texto",
+              "t": "article: author → #autor"
+            },
+            {
+              "icone": "megafone",
+              "t": "news: publisher → #organizacao"
+            },
+            {
+              "icone": "camadas",
+              "t": "course: provider → #organizacao"
+            }
+          ],
+          "detalhe": "No page repeats the name, logo, and profiles by hand. Each one points to the @id, and the search engine understands it's always the same person and the same brand."
+        },
+        {
+          "icone": "compartilhar",
+          "titulo": "sameAs",
+          "sub": "official profiles",
+          "detalhe": "A list of profiles that prove the identity. The person's profiles go in the Person; the brand's profiles go in the Organization. Mixing them makes the search engine think the person and the brand are the same thing."
+        },
+        {
+          "icone": "lupa",
+          "titulo": "Search engine and AI",
+          "sub": "merge into a single entity",
+          "detalhe": "Subdomains and sister sites use the same @id: to Google, it's a single entity. The markup must match what is written on the page; it confirms, it doesn't invent."
+        }
+      ],
+      "legenda": "Declare once, point always: the rest of the course writes content on behalf of this entity."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Build the entity in four steps",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Choose the @id values",
+          "sub": "just once",
+          "texto": [
+            "Use the canonical domain from course 1 and a fragment: #autor and #organizacao. Don't change them again.",
+            "If you have subdomains (news, events), they all use exactly the same @id values as the main site."
+          ]
+        },
+        {
+          "titulo": "Fill in the template",
+          "sub": "Person + Organization",
+          "texto": [
+            "Name, \"about\" page, logo, and the official profiles. Only profiles that exist and that you control.",
+            "The \"about\" page must say, in visible text, the same thing the markup says."
+          ]
+        },
+        {
+          "titulo": "Put it on every page",
+          "sub": "in the site template",
+          "texto": [
+            "The entity block goes into the layout, the same on every page.",
+            "The markup on each page (article, news, course) points to it by @id, without repeating data."
+          ],
+          "exemplo": {
+            "rot": "On inema.club",
+            "texto": "On 09/24/2026, Person #nei and Organization #organization started appearing on every page of the portal (commit 965d901)."
+          }
+        },
+        {
+          "titulo": "Test the name",
+          "sub": "collision",
+          "texto": [
+            "Ask two assistants \"what is [your brand]?\" If the answer talks about another company or agency, you have a name collision.",
+            "Markup alone doesn't solve a collision: it takes pages that clearly say who you are, and consistent profiles."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The entity template and a page pointing to it",
+      "sub": "Swap in your domain, names, and profiles. Don't invent a profile that doesn't exist.",
+      "blocos": [
+        {
+          "rot": "jsonld-entidade.json (inemaSEO templates)",
+          "icone": "arquivo",
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@graph\": [\n    {\n      \"@type\": \"Person\",\n      \"@id\": \"https://www.seusite.com/#autor\",\n      \"name\": \"Seu Nome\",\n      \"url\": \"https://www.seusite.com/sobre/\",\n      \"worksFor\": { \"@id\": \"https://www.seusite.com/#organizacao\" },\n      \"sameAs\": [\"https://github.com/seu-usuario\", \"https://www.linkedin.com/in/seu-perfil/\"]\n    },\n    {\n      \"@type\": \"Organization\",\n      \"@id\": \"https://www.seusite.com/#organizacao\",\n      \"name\": \"Sua Marca\",\n      \"url\": \"https://www.seusite.com/\",\n      \"logo\": \"https://www.seusite.com/logo.png\",\n      \"founder\": { \"@id\": \"https://www.seusite.com/#autor\" },\n      \"sameAs\": [\"https://www.youtube.com/@suamarca\", \"https://www.instagram.com/suamarca\"]\n    }\n  ]\n}"
+        },
+        {
+          "rot": "Article pointing to the entity",
+          "icone": "texto",
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Article\",\n  \"headline\": \"Título igual ao da página\",\n  \"datePublished\": \"2026-10-19\",\n  \"dateModified\": \"2026-10-19\",\n  \"author\": { \"@id\": \"https://www.seusite.com/#autor\" },\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
+        },
+        {
+          "rot": "Check it in the course 1 X-ray",
+          "icone": "terminal",
+          "conteudo": "tools/auditoria.sh https://www.seusite.com / /sobre/ /um-artigo/\n# look for the JSON-LD line of each page: Person and Organization on all of them"
+        },
+        {
+          "rot": "Name collision test (notes)",
+          "icone": "lista",
+          "conteudo": "Entity test on <dd/mm/yyyy>\nQuestion: \"what is <your brand>?\"\n- Assistant 1: <talks about me | talks about someone else: who? | doesn't know>\n- Assistant 2: <talks about me | talks about someone else: who? | doesn't know>\nCollision? <yes/no>. What I will write on the page about: <...>"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Captured output (10/19/2026)",
+            "html": "<p>JSON-LD from the inema.club home page, only the items with @id:</p><pre>EducationalOrganization  https://www.inema.club/#organization  sameAs: 5\nPerson                   https://www.inema.club/#nei           sameAs: 1\nWebSite                  https://www.inema.club/#website</pre><p>On a question page of the same site:</p><pre>publisher → {\"@id\": \"https://www.inema.club/#organization\"}</pre>"
+          },
+          {
+            "rot": "Name collision: the case",
+            "html": "<p>On 07/10/2026, INEMA's fixed battery of 20 questions ran on Claude and Gemini. INEMA showed up in <b>0 of 48</b> neutral answers on Claude and in <b>0 of 4</b> on Gemini.</p><p>Worse: \"What is INEMA?\" got 4 of 4 answers about INEMA-BA, an environmental agency. After that, 54 listing pages were published under /conhecimento/ saying who INEMA is.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>One @id per page</b>: it becomes a new entity on every page.</li><li><b>Mixed-up sameAs</b>: the person's profile on the brand, and vice versa.</li><li><b>Markup the text doesn't confirm</b>: Google asks that the structure match what's visible.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: your entity",
+      "sub": "Use the canonical domain you chose in course 1.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Entity published",
+          "min": "30 min",
+          "texto": "Fill in the template with your data, put it in the site layout, and make at least one page type (article, product, or course) point to the @id. Publish and run the X-ray on 3 pages.",
+          "pronto": "the schema.org validator shows Person and Organization with no errors, and the X-ray shows both on all 3 pages."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Collision test",
+          "min": "15 min",
+          "texto": "Ask \"what is [your brand]?\" and \"who is [your name]?\" on two assistants. Fill in the notes.",
+          "pronto": "the notes say, for each assistant, whether it talked about you, about someone else (who), or didn't know, and what you will write on the \"about\" page."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "The news site is a subdomain of the main site. Which @id does it use for the organization?",
+          "opcoes": [
+            "Its own subdomain @id.",
+            "The same @id as the main site.",
+            "None: news doesn't need an entity.",
+            "The address of the \"about\" page."
+          ],
+          "certa": 1,
+          "explica": "The same @id on every site and subdomain: to Google, it's a single entity. One @id per site splits the identity.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Where do the personal LinkedIn and the brand's Instagram profiles go?",
+          "opcoes": [
+            "Both on the Organization.",
+            "LinkedIn on the Person, Instagram on the Organization.",
+            "Both on the Person.",
+            "Only in the footer, with no markup."
+          ],
+          "certa": 1,
+          "explica": "Separate sameAs: the person's profiles on the Person, the brand's profiles on the Organization. Mixing them confuses person and brand.",
+          "ref": "codigo"
+        },
+        {
+          "p": "\"What is [your brand]?\" comes back talking about a public agency with the same name. What is this?",
+          "opcoes": [
+            "A robots.txt error.",
+            "Name collision: the assistant knows another entity with your name.",
+            "A Google penalty.",
+            "A missing llms.txt."
+          ],
+          "certa": 1,
+          "explica": "That was the case with INEMA and INEMA-BA. The way out is to make clear who you are, with consistent pages and profiles, and measure again later.",
+          "ref": "passos"
+        },
+        {
+          "p": "The markup says the author is an expert with 20 years of experience, but the page doesn't mention it. Is that okay?",
+          "opcoes": [
+            "It's fine, markup is for robots.",
+            "No: the structure has to match the visible text.",
+            "It's fine if it's in the sameAs.",
+            "It's fine, but only for AI."
+          ],
+          "certa": 1,
+          "explica": "Google asks that structured data confirm what the page shows. Markup with no text to back it up is a fabricated signal.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Two fixed @id values",
+          "texto": "One author and one brand, the same on every page and subdomain."
+        },
+        {
+          "t": "Point, don't repeat",
+          "texto": "Article, news, and course cite the @id."
+        },
+        {
+          "t": "Test the name",
+          "texto": "A name collision shows up when you ask the question and write down the answer."
+        },
+        {
+          "t": "2026 yardstick",
+          "texto": "There is no special schema for AI: an entity matters because it says who is behind the content and matches the text."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "jsonld-entidade.json template (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/jsonld-entidade.json",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Schema.org validator",
+          "href": "https://validator.schema.org/",
+          "icone": "check"
+        },
+        {
+          "t": "Google: organization structured data (English)",
+          "href": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "icone": "lupa"
+        },
+        {
+          "t": "Google: helpful, reliable content (English)",
+          "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+          "icone": "lupa"
+        }
+      ]
+    }
+  ]
+}

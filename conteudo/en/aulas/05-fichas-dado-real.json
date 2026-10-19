@@ -1,0 +1,274 @@
+{
+  "slug": "fichas-dado-real",
+  "num": 5,
+  "menu": "Listing pages",
+  "titulo": "Listing pages with real data and the anti-fabrication check",
+  "titulo_curto": "Listing pages with real data",
+  "minutos": 18,
+  "lead": "A catalog of products, courses, or services becomes one page per item: the listing page. Built in bulk, with template text, it is the thin page that doesn't get indexed. Built from each item's real page, with an AI that only extracts and a check that discards whatever it made up, it becomes content only you have.",
+  "objetivo": "generate catalog listing pages extracted from each item's real page and discard any item that fails the anti-fabrication check.",
+  "competencias": [
+    "extrair-ficha-da-fonte",
+    "rodar-trava-anti-invencao",
+    "decidir-publicar-ou-descartar"
+  ],
+  "aprende": [
+    {
+      "t": "Why 283 template-based listing pages didn't get indexed"
+    },
+    {
+      "t": "The extractive prompt: copy from the source, don't create"
+    },
+    {
+      "t": "The check: title, words, and numbers verified against the source"
+    },
+    {
+      "t": "Publish a little at a time, and only what passed"
+    }
+  ],
+  "hero_alt": "An archivist checks a catalog listing page against the original document, in front of a wooden filing cabinet.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From the real page to the published listing page",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "arquivo",
+          "titulo": "Real page",
+          "sub": "the item's source",
+          "detalhe": "The page of the product, course, or service itself, with the text you already wrote. If the source doesn't exist or is behind a login, the listing page has nowhere to get data from."
+        },
+        {
+          "icone": "robo",
+          "titulo": "Extractive AI",
+          "sub": "copies, doesn't create",
+          "detalhe": "The prompt tells it to copy titles as they appear and reuse the words from the page. No price, promotion, testimonial, or student count. A missing field stays empty."
+        },
+        {
+          "icone": "portao",
+          "titulo": "Check",
+          "sub": "three verifications",
+          "forte": true,
+          "itens": [
+            {
+              "icone": "check",
+              "t": "the title exists in the source"
+            },
+            {
+              "icone": "check",
+              "t": "the sentence reuses the words from the source"
+            },
+            {
+              "icone": "check",
+              "t": "every number appears in the source"
+            }
+          ],
+          "detalhe": "The validar_extracao.mjs script checks each item. Anything that fails is discarded, not fixed: better a smaller listing page than a lying one."
+        },
+        {
+          "icone": "check",
+          "titulo": "Publish",
+          "sub": "in small batches",
+          "forte": true,
+          "detalhe": "A listing page with 3 or more valid modules goes in as enriched. It goes into the sitemap only with content unique to that item."
+        },
+        {
+          "icone": "x",
+          "titulo": "Discard",
+          "sub": "or keep it with noindex",
+          "detalhe": "A rejected item does not become an indexable page. It comes back when the source has enough text."
+        }
+      ],
+      "legenda": "The AI rewrites and organizes; the check makes sure it did not make up facts."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "The case and the fix",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "The batch",
+          "sub": "30/08/2026",
+          "texto": [
+            "INEMA published 283 course listing pages in a single commit. Of the 6 listing pages in the sample, 5 were \"discovered, not indexed\" and had never been crawled."
+          ]
+        },
+        {
+          "titulo": "The diagnosis",
+          "sub": "why it was thin",
+          "texto": [
+            "Each listing page had 170 to 240 words, and two randomly picked listing pages shared 47% of their vocabulary.",
+            "The FAQ was identical on all of them, and the description was copied from the course page."
+          ]
+        },
+        {
+          "titulo": "The extraction",
+          "sub": "prompt + check",
+          "texto": [
+            "The syllabus is now extracted from each course's real page, with the check discarding anything that was not in the source.",
+            "40 listing pages were extracted and validated for US$ 0.031, in one run with an authorized API; the following batches moved to Codex through the subscription."
+          ]
+        },
+        {
+          "titulo": "The pace",
+          "sub": "bit by bit",
+          "texto": [
+            "Enriched listing pages went from 40 to 50, 76 and 98 (10/05/2026), among 310 listing pages live. In batches, not all at once."
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The extractive prompt and the check",
+      "sub": "Replace \"course\" with your own type of item. Run the check on every sentence and title.",
+      "blocos": [
+        {
+          "rot": "prompt-ficha-extrativa.md (inemaSEO templates)",
+          "icone": "chat",
+          "conteudo": "You extract a course's syllabus from the TEXT OF ITS PAGE. Rules:\n- EXTRACTIVE: copy module/track titles exactly as they appear (you may remove emoji). \"Audience\", \"learns\" and \"builds\" phrases\n  must reuse the words on the page; do not invent anything.\n- Do not include price, free access, promotions, testimonials or student counts.\n- If a field is not on the page, use [] or null.\nAnswer ONLY JSON: {\"estrutura\":[{\"titulo\":\"\",\"detalhe\":\"\"}],\"aprende\":[\"\"],\"publico\":[\"\"],\n\"constroi\":[\"\"],\"pre_requisitos\":[\"\"],\"carga_horaria\":null,\"nivel\":null}\nLimits: estrutura up to 12 items — only tracks/modules/lessons of the content, never sections of the page\n(\"Who it's for\", \"FAQ\", \"Start now\")."
+        },
+        {
+          "rot": "Run the check (validar_extracao.mjs)",
+          "icone": "terminal",
+          "conteudo": "git clone https://github.com/inematds/inemaseo-metodo.git\ncd inemaseo-metodo\n# fonte.txt = texto da página real do item\nnode tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\nnode tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\""
+        },
+        {
+          "rot": "fonte.txt used in the example",
+          "icone": "arquivo",
+          "conteudo": "Curso de pão de fermentação natural\nMódulo 1: O levain do zero\nMódulo 2: Hidratação e dobras\nMódulo 3: Forno doméstico\nCarga: 6 aulas de 20 minutos.\nPara quem já faz pão com fermento comum e quer migrar para o levain."
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Captured output (10/19/2026)",
+            "html": "<pre>$ node tools/validar_extracao.mjs fonte.txt \"Hidratação e dobras\"\n{ apoiada: true, numerosNaFonte: true, tituloNaFonte: true }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Curso com 12 aulas sobre fermentação natural\"\n{ apoiada: true, numerosNaFonte: false, tituloNaFonte: false }\n\n$ node tools/validar_extracao.mjs fonte.txt \"Aprenda a vender seus pães no Instagram\"\n{ apoiada: false, numerosNaFonte: true, tituloNaFonte: false }</pre>"
+          },
+          {
+            "rot": "How to read it",
+            "html": "<ul><li><b>First</b>: module title copied from the source. Passes all three.</li><li><b>Second</b>: the source says 6 lessons; the \"12\" was made up. Rejected because of the number.</li><li><b>Third</b>: \"selling on Instagram\" is not on the page. Rejected because it does not reuse the source's words.</li></ul><p>A rejected item is discarded, not fixed by hand to pass.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: three real listing pages",
+      "sub": "Pick 3 items from your catalog that have their own page with text.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · Extract three listing pages",
+          "min": "40 min",
+          "texto": "Save each item's page text to a file and run the extractive prompt with the agent from your subscription.",
+          "pronto": "you have 3 JSON files in the prompt's format, with no price, testimonials or customer counts."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Run them through the check",
+          "min": "30 min",
+          "texto": "Run validar_extracao.mjs on each title and sentence from the 3 listing pages. Discard whatever fails.",
+          "pronto": "a note lists each item with its check result, the rejected ones are out, and only listing pages with 3 or more valid modules were marked to publish."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "The check rejected a sentence because the number is not in the source. What should you do?",
+          "opcoes": [
+            "Edit the sentence until it passes.",
+            "Discard the item.",
+            "Publish with a notice.",
+            "Replace the number with \"several\"."
+          ],
+          "certa": 1,
+          "explica": "An item that fails is discarded, not patched up. A smaller listing page beats a lying one.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "Why weren't INEMA's 283 listing pages getting indexed?",
+          "opcoes": [
+            "There was no llms.txt.",
+            "They were thin and alike: 170 to 240 words, 47% shared vocabulary, an identical FAQ, all published at once.",
+            "The robots.txt blocked them.",
+            "They had no image."
+          ],
+          "certa": 1,
+          "explica": "A big batch of thin, nearly identical pages. The fix was content extracted from the real source and publishing in batches.",
+          "ref": "passos"
+        },
+        {
+          "p": "What does the extractive prompt forbid?",
+          "opcoes": [
+            "Copying the page's headings.",
+            "Price, promotion, testimonial, and number of students.",
+            "Answering in JSON.",
+            "Leaving a field empty."
+          ],
+          "certa": 1,
+          "explica": "This is the data that changes the most and that most tempts the AI to make things up. A missing field stays empty.",
+          "ref": "codigo"
+        },
+        {
+          "p": "A listing page passed the check with only 2 valid modules. Does it count as enriched?",
+          "opcoes": [
+            "Yes.",
+            "No: the minimum is 3 valid modules.",
+            "Yes, if it has an FAQ.",
+            "Only in English."
+          ],
+          "certa": 1,
+          "explica": "With fewer than 3, it doesn't have enough body to be published as enriched.",
+          "ref": "diagrama"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Real source",
+          "texto": "Each listing page comes from the page of the item itself."
+        },
+        {
+          "t": "Check",
+          "texto": "Title, words, and numbers are checked; whatever fails is dropped."
+        },
+        {
+          "t": "In batches",
+          "texto": "Publishing hundreds at once is what stalled the crawl."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "validar_extracao.mjs (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/tools/validar_extracao.mjs",
+          "icone": "terminal"
+        },
+        {
+          "t": "prompt-ficha-extrativa.md (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/prompt-ficha-extrativa.md",
+          "icone": "arquivo"
+        },
+        {
+          "t": "Google: spam policies, scaled content (English)",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies",
+          "icone": "escudo"
+        }
+      ]
+    }
+  ]
+}

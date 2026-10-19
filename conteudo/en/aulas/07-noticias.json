@@ -1,0 +1,264 @@
+{
+  "slug": "noticias",
+  "num": 7,
+  "menu": "News",
+  "titulo": "News with its own page and a permanent archive",
+  "titulo_curto": "News with its own page",
+  "minutos": 15,
+  "lead": "A news item that only exists as an entry in a list on the home page disappears when the list moves on, and the URL the search engine had already indexed goes with it. Every news item deserves its own address, news markup pointing to your brand, a body written only with facts from the source, and an archive that is never pruned.",
+  "objetivo": "publish news on its own URL with NewsArticle, a body with only facts from the source, and an archive that never deletes pages that are already indexed.",
+  "competencias": [
+    "publicar-noticia-em-url-propria",
+    "marcar-newsarticle",
+    "escrever-corpo-com-fatos-da-fonte",
+    "manter-arquivo-permanente"
+  ],
+  "aprende": [
+    {
+      "t": "Why a list on the home page is not a page"
+    },
+    {
+      "t": "The NewsArticle template tied to your entity"
+    },
+    {
+      "t": "A body of 150 to 250 words with only facts from the source"
+    },
+    {
+      "t": "Permanent archive, and noindex when the source requires a login"
+    }
+  ],
+  "hero_alt": "A person carefully pulls a bound volume of newspapers from an archive shelf.",
+  "secoes": [
+    {
+      "tipo": "diagrama",
+      "titulo": "From the news item to the archive",
+      "sub": "Tap each block.",
+      "nos": [
+        {
+          "icone": "megafone",
+          "titulo": "News",
+          "sub": "dated news",
+          "detalhe": "Launch, change, \"what changed.\" It lives on the news site under the territory from lesson 2, never as a \"what is it\" guide."
+        },
+        {
+          "icone": "arquivo",
+          "titulo": "Own URL",
+          "sub": "one per news item and language",
+          "forte": true,
+          "detalhe": "Each news item has a fixed address, one per language. It links to the source, to the topic's evergreen page, and to the catalog item."
+        },
+        {
+          "icone": "marca",
+          "titulo": "NewsArticle",
+          "sub": "publisher → your brand",
+          "detalhe": "The news markup points to the Organization from lesson 1 by its @id and says which source it is based on (isBasedOn)."
+        },
+        {
+          "icone": "texto",
+          "titulo": "Body",
+          "sub": "150 to 250 words",
+          "detalhe": "A title and one sentence is a thin page. An agent writes three paragraphs using only facts from the source page, with the numbers checked. Source behind a login or with little text: the page stays noindex until it has a body."
+        },
+        {
+          "icone": "pasta",
+          "titulo": "Archive",
+          "sub": "never pruned",
+          "forte": true,
+          "detalhe": "The home page shows the most recent items, but the pages come from an archive that never loses an item. An indexed URL can't disappear. You can rebuild the archive from the git history."
+        }
+      ],
+      "legenda": "The list is the showcase; the archive is the collection."
+    },
+    {
+      "tipo": "passos",
+      "titulo": "Publishing a news item",
+      "sub": "Tap each step.",
+      "passos": [
+        {
+          "titulo": "Address",
+          "sub": "fixed",
+          "texto": [
+            "Generate the address from a stable id, not from the position in the list. Same id in PT, EN, and ES, with reciprocal hreflang."
+          ]
+        },
+        {
+          "titulo": "Body",
+          "sub": "facts from the source",
+          "texto": [
+            "Give the agent the source page's text and the request template. Three paragraphs: what it is, what changes for those who use it, how to get started.",
+            "Check the result: 110 to 320 words and every number present in the source (the check from lesson 5 works)."
+          ]
+        },
+        {
+          "titulo": "Markup",
+          "sub": "NewsArticle",
+          "texto": [
+            "Fill in the title, description, real dates, language, the source in isBasedOn, and the publisher with your organization's @id."
+          ]
+        },
+        {
+          "titulo": "Archive",
+          "sub": "and notice",
+          "texto": [
+            "Add the news item to the archive (never remove the old ones) and notify search engines only with URLs that return 200, as in course 1."
+          ],
+          "exemplo": {
+            "rot": "At INEMA",
+            "texto": "On the news site, 113 of 159 news items have a text body; the others stayed that way because the source requires a login, has little text, or returned a 404. On 10/02/2026, 342 news URLs were submitted."
+          }
+        }
+      ]
+    },
+    {
+      "tipo": "codigo",
+      "titulo": "The markup and body templates",
+      "sub": "From inemaSEO (MIT). Change the domain, id, and dates.",
+      "blocos": [
+        {
+          "rot": "jsonld-newsarticle.json",
+          "icone": "arquivo",
+          "conteudo": "{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"NewsArticle\",\n  \"@id\": \"https://news.seusite.com/noticias/id-da-noticia/#article\",\n  \"mainEntityOfPage\": \"https://news.seusite.com/noticias/id-da-noticia/\",\n  \"headline\": \"Título da notícia\",\n  \"description\": \"Resumo de uma frase.\",\n  \"articleBody\": \"Corpo com 150 a 250 palavras, escrito só com fatos da fonte.\",\n  \"datePublished\": \"2026-10-02\",\n  \"dateModified\": \"2026-10-02\",\n  \"inLanguage\": \"pt-BR\",\n  \"isBasedOn\": \"https://fonte-original.com/materia\",\n  \"publisher\": { \"@id\": \"https://www.seusite.com/#organizacao\" }\n}"
+        },
+        {
+          "rot": "prompt-texto-noticia.md (body against thin pages)",
+          "icone": "chat",
+          "conteudo": "You write the body of a news item for non-expert readers.\nNews item: \"<title>\" — <summary>\nWrite 3 short paragraphs (150 to 250 words in total):\n1) what it is; 2) what it's for / what changes for those who use it; 3) how to get started or what to watch for.\nRULES: use ONLY facts from the SOURCE TEXT; do not invent numbers, dates, prices, names, or promises; simple\nsentences, no clickbait, no \"in this article\". Then translate into English (en) and Spanish (es), keeping\nproduct and brand names.\nReply ONLY with JSON: {\"pt\":[\"p1\",\"p2\",\"p3\"],\"en\":[\"p1\",\"p2\",\"p3\"],\"es\":[\"p1\",\"p2\",\"p3\"]}\n\nSOURCE TEXT:\n<text extracted from the original page>"
+        },
+        {
+          "rot": "Archive rule (note)",
+          "icone": "lista",
+          "conteudo": "News archive for <site>\n- every published news item goes into <arquivo.json>; nothing is removed\n- the home page shows the <N> most recent from the archive\n- source with login or little text: page with noindex until it has a body\n- body validation: 110 to 320 words; every number exists in the source; 3 paragraphs per language"
+        }
+      ],
+      "saida": {
+        "selo": "real",
+        "abas": [
+          {
+            "rot": "Why the body matters",
+            "html": "<p>A title with one sentence is a thin page, and an indexed thin page weighs against the whole site (course 1, lesson 7). The 150-to-250-word body isn't filler: it's the useful summary, with only facts the source confirms.</p>"
+          },
+          {
+            "rot": "Common mistakes",
+            "html": "<ul><li><b>Pruning the list</b> and deleting the page along with it: the indexed URL becomes a 404.</li><li><b>\"What is X\" on the news site</b>: competes with the pillar page.</li><li><b>A number the source doesn't have</b> in the body: fails the check.</li></ul>"
+          }
+        ]
+      }
+    },
+    {
+      "tipo": "pratica",
+      "titulo": "Practice: one news item from the template",
+      "sub": "Pick a real piece of news from your subject.",
+      "exercicios": [
+        {
+          "id": "e1",
+          "titulo": "E1 · News item with NewsArticle",
+          "min": "40 min",
+          "texto": "Write the body with the request template from the source, fill in the NewsArticle with your organization's @id, and publish it at its own URL.",
+          "pronto": "the page returns 200, the schema.org validator shows the NewsArticle with no errors and the publisher pointing to your @id, and the body is 150 to 250 words."
+        },
+        {
+          "id": "e2",
+          "titulo": "E2 · Archive rule",
+          "min": "15 min",
+          "texto": "Write your site's archive rule and check whether the home page prunes old pages.",
+          "pronto": "the note says where the file lives, how many items the home page shows, and what happens to news items without an accessible source (noindex)."
+        }
+      ]
+    },
+    {
+      "tipo": "quiz",
+      "titulo": "Test what you learned",
+      "sub": "The explanation shows up after your answer.",
+      "perguntas": [
+        {
+          "p": "The home page shows the 20 most recent news items and deletes the older ones. What's the problem?",
+          "opcoes": [
+            "None.",
+            "URLs that were already indexed disappear; the archive has to be permanent.",
+            "It's missing an FAQ.",
+            "The title gets too big."
+          ],
+          "certa": 1,
+          "explica": "The home page can show just a few, but the pages come from an archive that is never pruned.",
+          "ref": "diagrama",
+          "cert": true
+        },
+        {
+          "p": "The news source requires a login and you don't have the text. What do you do?",
+          "opcoes": [
+            "Ask the agent to imagine the content.",
+            "Publish only the title with normal indexing.",
+            "Leave the page as noindex until it has a body.",
+            "Copy the text from another site."
+          ],
+          "certa": 2,
+          "explica": "Without an accessible source, there's no fact to write about. The page stays out of the index until it has a body.",
+          "ref": "diagrama"
+        },
+        {
+          "p": "What does the NewsArticle's publisher point to?",
+          "opcoes": [
+            "To the original source.",
+            "To the @id of your Organization (lesson 1).",
+            "To the source's author.",
+            "To the home page."
+          ],
+          "certa": 1,
+          "explica": "The source goes in isBasedOn. The publisher is your organization, using the same @id as every page.",
+          "ref": "codigo"
+        },
+        {
+          "p": "The generated body has a number that isn't in the source. Now what?",
+          "opcoes": [
+            "Publish it: it's just one number.",
+            "Reject it and redo it: every number has to exist in the source.",
+            "Round it.",
+            "Put it in quotes."
+          ],
+          "certa": 1,
+          "explica": "The body validation requires every number to appear in the source, just like the check on the listing pages.",
+          "ref": "passos"
+        }
+      ]
+    },
+    {
+      "tipo": "resumo",
+      "titulo": "Takeaways",
+      "itens": [
+        {
+          "t": "Own URL",
+          "texto": "One per news item and per language."
+        },
+        {
+          "t": "NewsArticle",
+          "texto": "Publisher by your brand's @id; source in isBasedOn."
+        },
+        {
+          "t": "Archive",
+          "texto": "The home page shows a few; the archive keeps them all."
+        }
+      ]
+    },
+    {
+      "tipo": "links",
+      "titulo": "Going further",
+      "links": [
+        {
+          "t": "Google: article structured data (English)",
+          "href": "https://developers.google.com/search/docs/appearance/structured-data/article",
+          "icone": "lupa"
+        },
+        {
+          "t": "jsonld-newsarticle.json (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/jsonld-newsarticle.json",
+          "icone": "arquivo"
+        },
+        {
+          "t": "prompt-texto-noticia.md (inemaSEO, MIT)",
+          "href": "https://github.com/inematds/inemaseo-metodo/blob/main/templates/prompt-texto-noticia.md",
+          "icone": "chat"
+        }
+      ]
+    }
+  ]
+}
